@@ -1,0 +1,66 @@
+/* Design B — Coach. Data-forward chat: gradient mark, gradient coach bubbles,
+   tile-style quick-start chips. ONE emerald pop = the send button. Scoped under .dB. */
+
+.dB .bcoach-pad{display:flex; flex-direction:column; height:100%; padding-bottom:18px;}
+
+/* header mark echoes the score-ring gradient surface, not a primary action */
+.dB .bcoach-mark{width:40px; height:40px; border-radius:13px; flex:none;
+  background:linear-gradient(155deg, rgba(16,185,129,.28), rgba(16,185,129,.05) 60%, var(--card2));
+  border:1px solid var(--eline); display:grid; place-items:center; color:var(--ebright);}
+
+/* feed */
+.dB .bcoach-feed{flex:1; min-height:0; overflow-y:auto; margin-top:18px; padding:2px 0 6px;
+  display:flex; flex-direction:column; gap:14px;}
+.dB .bcoach-feed::-webkit-scrollbar{display:none;}
+
+.dB .bcoach-line{display:flex; gap:9px; max-width:90%;}
+.dB .bcoach-from{align-self:flex-start; align-items:flex-end;}
+.dB .bcoach-mine{align-self:flex-end;}
+
+.dB .bcoach-bmark{width:24px; height:24px; border-radius:9px; flex:none; margin-bottom:2px;
+  background:linear-gradient(180deg,var(--ebright),var(--edeep)); color:var(--on-emerald);
+  display:grid; place-items:center; box-shadow:0 6px 16px -8px rgba(16,185,129,.7);}
+
+.dB .bcoach-bubble{font-size:14px; line-height:1.5; padding:13px 15px; border-radius:18px;}
+
+/* coach reply: gradient data-card surface with emerald top hairline */
+.dB .bcoach-cb{background:linear-gradient(160deg, rgba(16,185,129,.12), var(--card2) 70%);
+  border:1px solid var(--hair); border-top:1px solid var(--eline); border-bottom-left-radius:7px;
+  color:var(--t1);}
+
+/* user bubble: solid raised, quiet */
+.dB .bcoach-ub{background:var(--raised); border:1px solid var(--hair); border-bottom-right-radius:7px;
+  color:var(--t2);}
+
+/* typing dots */
+.dB .bcoach-typing{display:flex; gap:5px; padding:15px;}
+.dB .bcoach-typing i{width:7px; height:7px; border-radius:999px; background:var(--ebright);
+  opacity:.4; animation:bcoach-blink 1.1s infinite;}
+.dB .bcoach-typing i:nth-child(2){animation-delay:.18s;}
+.dB .bcoach-typing i:nth-child(3){animation-delay:.36s;}
+@keyframes bcoach-blink{0%,60%,100%{opacity:.28; transform:translateY(0);} 30%{opacity:1; transform:translateY(-3px);}}
+
+/* quick-start chips as data tiles */
+.dB .bcoach-chips{display:flex; flex-direction:column; gap:8px; margin:12px 0 4px;}
+.dB .bcoach-chips-lbl{margin-bottom:2px;}
+.dB .bcoach-chip{display:flex; align-items:center; gap:11px; width:100%; text-align:left;
+  background:var(--card); border:1px solid var(--hair); border-radius:14px; padding:12px 13px;
+  color:var(--t1); font-family:inherit; font-size:14px; cursor:pointer;}
+.dB .bcoach-chip:hover{border-color:var(--eline);}
+.dB .bcoach-chip-spark{width:28px; height:28px; border-radius:9px; flex:none;
+  background:rgba(16,185,129,.14); border:1px solid var(--hair); display:grid; place-items:center;
+  color:var(--ebright);}
+.dB .bcoach-chip-txt{flex:1;}
+
+/* input bar */
+.dB .bcoach-input{display:flex; align-items:center; gap:10px; margin-top:10px;}
+.dB .bcoach-field{flex:1; height:50px; border-radius:15px; background:var(--card);
+  border:1px solid var(--hair); color:var(--t1); padding:0 16px; font-size:14px; outline:none;}
+.dB .bcoach-field::placeholder{color:var(--t3); font-family:"DM Sans",sans-serif;}
+.dB .bcoach-field:focus{border-color:var(--eline);}
+
+/* THE single emerald pop */
+.dB .bcoach-send{width:50px; height:50px; flex:none; border-radius:15px; border:none; cursor:pointer;
+  background:linear-gradient(180deg,var(--ebright),var(--edeep)); color:var(--on-emerald);
+  display:grid; place-items:center; box-shadow:0 12px 28px -8px rgba(16,185,129,.7);}
+.dB .bcoach-send:active{transform:translateY(1px);}

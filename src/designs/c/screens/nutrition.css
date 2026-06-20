@@ -1,0 +1,53 @@
+/* Design C — Nutrition. Bold cover hero, big numerals, single-emerald macros. Scoped under .dC. */
+
+/* cover overrides: tighter top so the giant calorie number dominates */
+.dC .nutc-cover{padding:52px 22px 26px;}
+.dC .nutc-cover .ctop{align-items:flex-start;}
+
+.dC .nutc-modeswitch{display:flex; gap:4px; background:rgba(4,32,24,.18); border-radius:999px; padding:4px;}
+.dC .nutc-modeswitch button{border:none; background:none; cursor:pointer; padding:6px 12px; border-radius:999px;
+  font-size:9.5px; letter-spacing:1.5px; color:rgba(4,32,24,.6); font-family:"JetBrains Mono",monospace; font-weight:600;}
+.dC .nutc-modeswitch button.on{background:#042018; color:#eafff6;}
+
+.dC .nutc-hero{font-family:"Outfit"; font-weight:800; font-size:78px; line-height:.9; letter-spacing:-3px;
+  color:#042018; margin-top:6px;}
+.dC .nutc-herometa{color:rgba(4,32,24,.74); font-size:13.5px; font-weight:600; margin-top:12px;}
+.dC .nutc-herometa b{color:#042018;}
+
+.dC .nutc-track{margin-top:14px; height:7px; border-radius:999px; background:rgba(4,32,24,.18); overflow:hidden;}
+.dC .nutc-track i{display:block; height:100%; border-radius:999px; background:#042018; transition:width .35s ease;}
+
+/* macros: one emerald, big numbers, no boxed card-soup */
+.dC .nutc-macros{display:flex; gap:11px; padding:22px 20px 0;}
+.dC .nutc-macro{flex:1; background:var(--card); border:1px solid var(--hair); border-radius:18px; padding:15px 14px;}
+.dC .nutc-mval{font-family:"JetBrains Mono",monospace; font-weight:700; font-size:23px; color:var(--t1); line-height:1;}
+.dC .nutc-mval small{font-size:10px; font-weight:500; color:var(--t3); margin-left:2px;}
+.dC .nutc-mname{font-size:8.5px; letter-spacing:1px; text-transform:uppercase; color:var(--t3); margin-top:7px;}
+.dC .nutc-mbar{margin-top:11px; height:5px; border-radius:999px; background:rgba(255,255,255,.07); overflow:hidden;}
+.dC .nutc-mbar i{display:block; height:100%; border-radius:999px; background:linear-gradient(90deg,var(--emerald),var(--ebright)); transition:width .35s ease;}
+
+.dC .nutc-sec{font-family:"Outfit"; font-weight:700; font-size:19px; letter-spacing:-.4px; color:var(--t1); margin:28px 0 14px;}
+
+/* meals: flat rows, hairline separators, no nested cards */
+.dC .nutc-meals{display:flex; flex-direction:column;}
+.dC .nutc-meal{display:flex; align-items:baseline; gap:12px; padding:13px 0; border-bottom:1px solid var(--hair);}
+.dC .nutc-meal:first-child{border-top:1px solid var(--hair);}
+.dC .nutc-mtime{font-size:11px; color:var(--t3); width:42px; flex-shrink:0;}
+.dC .nutc-mtitle{flex:1; font-size:14.5px; font-weight:600; color:var(--t1);}
+.dC .nutc-mmeta{font-size:11px; color:var(--t2);}
+
+/* quick-log chips */
+.dC .nutc-chips{display:flex; flex-wrap:wrap; gap:9px;}
+.dC .nutc-chip{display:inline-flex; align-items:center; gap:6px; background:var(--raised); border:1px solid var(--hair);
+  color:var(--t1); padding:10px 15px; border-radius:999px; font-family:"DM Sans",sans-serif; font-size:13.5px; font-weight:600; cursor:pointer;}
+.dC .nutc-chip svg{color:var(--ebright);}
+.dC .nutc-chip:active{background:var(--card);}
+
+/* add row: the ONE emerald pop */
+.dC .nutc-add{display:flex; gap:11px; margin-top:24px;}
+.dC .nutc-addmain{flex:1; display:inline-flex; align-items:center; justify-content:center; gap:9px;
+  background:linear-gradient(180deg,var(--ebright),var(--emerald)); color:var(--on-emerald);
+  border:none; cursor:pointer; padding:17px; border-radius:16px; font-family:"Outfit"; font-weight:700; font-size:16px;}
+.dC .nutc-ai{width:56px; flex-shrink:0; display:grid; place-items:center; background:var(--card);
+  border:1px solid var(--hair); border-radius:16px; color:var(--t2); cursor:pointer;}
+.dC .nutc-ai:active{color:var(--ebright);}

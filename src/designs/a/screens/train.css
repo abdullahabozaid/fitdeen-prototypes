@@ -1,0 +1,58 @@
+/* Design A — Train. Scoped under .dA. Reuses tokens from a.css. */
+
+.dA .train-head{display:flex; justify-content:space-between; align-items:center;}
+.dA .train-timer{display:flex; align-items:center; gap:8px; padding:8px 13px; border-radius:999px; background:rgba(255,255,255,.04); border:1px solid var(--hair); cursor:pointer; font-family:inherit; color:var(--t2);}
+.dA .train-timer.run{background:rgba(16,185,129,.1); border-color:rgba(16,185,129,.32);}
+.dA .train-timer b{font-family:"JetBrains Mono"; font-weight:600; font-size:14px; letter-spacing:.5px; color:var(--t1); font-variant-numeric:tabular-nums;}
+.dA .train-timer.run b{color:var(--ebright);}
+.dA .train-pulse{width:7px; height:7px; border-radius:999px; background:var(--t4);}
+.dA .train-timer.run .train-pulse{background:var(--ebright); box-shadow:0 0 0 0 rgba(52,211,153,.5); animation:train-blink 1.8s ease-in-out infinite;}
+@keyframes train-blink{0%,100%{opacity:1;}50%{opacity:.35;}}
+
+.dA .train-segs{display:flex; gap:4px; margin-top:20px; padding:4px; background:var(--card); border:1px solid var(--hair); border-radius:13px;}
+.dA .train-seg{flex:1; height:36px; border:none; border-radius:9px; background:transparent; color:var(--t3); font-family:"JetBrains Mono"; font-weight:500; font-size:11px; letter-spacing:1.4px; cursor:pointer;}
+.dA .train-seg.on{background:var(--raised); color:var(--t1); box-shadow:0 1px 0 var(--topedge) inset;}
+
+.dA .train-sess{margin-top:22px;}
+.dA .train-sess h2{font-family:"Outfit"; font-weight:700; font-size:23px; letter-spacing:-.4px; margin-top:6px;}
+.dA .train-count{font-family:"JetBrains Mono"; font-size:12px; color:var(--t3); margin-top:5px; font-variant-numeric:tabular-nums;}
+
+.dA .train-list{margin-top:18px; display:flex; flex-direction:column;}
+.dA .train-row{position:relative; display:flex; align-items:center; gap:14px; padding:15px 0 15px 18px; border-bottom:1px solid var(--hair);}
+.dA .train-list .train-row:last-of-type{border-bottom:none;}
+/* the signature: vertical completion bar */
+.dA .train-bar{position:absolute; left:0; top:9px; bottom:9px; width:3px; border-radius:999px; background:var(--hair); transition:background .25s ease;}
+.dA .train-row.done .train-bar{background:var(--emerald);}
+
+.dA .train-body{flex:1; text-align:left; background:none; border:none; cursor:pointer; color:inherit; font-family:inherit; padding:0;}
+.dA .train-name{font-family:"Outfit"; font-weight:600; font-size:16px; color:var(--t1); transition:color .2s ease;}
+.dA .train-row.done .train-name{color:var(--ebright);}
+.dA .train-sub{display:flex; align-items:center; gap:8px; margin-top:5px;}
+.dA .train-mdot{width:6px; height:6px; border-radius:999px;}
+.dA .train-mname{font-family:"JetBrains Mono"; font-size:10px; letter-spacing:1.2px; color:var(--t3); text-transform:uppercase;}
+.dA .train-prev{font-family:"JetBrains Mono"; font-size:11px; color:var(--t4); margin-left:auto; padding-left:10px; font-variant-numeric:tabular-nums;}
+
+.dA .train-check{flex-shrink:0; width:28px; height:28px; border-radius:999px; border:1px solid var(--hair); background:var(--card); display:grid; place-items:center; cursor:pointer; color:var(--t3); transition:all .2s ease;}
+.dA .train-check.on{background:var(--emerald); border-color:var(--emerald); color:var(--on-emerald);}
+
+.dA .train-sets{margin:2px 0 14px 18px; background:var(--card); border:1px solid var(--hair); border-radius:13px; overflow:hidden;}
+.dA .train-shead, .dA .train-srow{display:grid; grid-template-columns:46px 1fr 1fr 36px; align-items:center; padding:0 14px;}
+.dA .train-shead{height:32px; border-bottom:1px solid var(--hair);}
+.dA .train-shead span{font-family:"JetBrains Mono"; font-size:9px; letter-spacing:1.4px; color:var(--t4); text-transform:uppercase;}
+.dA .train-shead span:last-child{text-align:right;}
+.dA .train-srow{height:44px; border-bottom:1px solid var(--hair);}
+.dA .train-sets .train-srow:last-child{border-bottom:none;}
+.dA .train-srow > span{font-family:"JetBrains Mono"; font-size:14px; color:var(--t1); font-variant-numeric:tabular-nums;}
+.dA .train-srow .train-sn{color:var(--t3); font-size:12px;}
+.dA .train-srow.set-done > span{color:var(--t2);}
+.dA .train-scell{justify-self:end;}
+.dA .train-scheck{width:24px; height:24px; border-radius:7px; border:1px solid var(--hair); background:transparent; display:grid; place-items:center; cursor:pointer; color:var(--t4); transition:all .15s ease;}
+.dA .train-scheck.on{background:var(--emerald); border-color:var(--emerald); color:var(--on-emerald); transform:scale(1.04);}
+
+.dA .train-finish{margin-top:26px; width:100%; height:54px; border:none; border-radius:15px; background:linear-gradient(180deg,var(--ebright),var(--emerald)); color:var(--on-emerald); display:flex; align-items:center; justify-content:center; gap:9px; font-family:"Outfit"; font-weight:700; font-size:16px; cursor:pointer; box-shadow:0 8px 26px -8px rgba(16,185,129,.5);}
+.dA .train-finish:disabled{opacity:.45; box-shadow:none; cursor:default;}
+.dA .train-fnote{text-align:center; font-family:"JetBrains Mono"; font-size:11px; color:var(--t3); margin-top:12px; font-variant-numeric:tabular-nums;}
+
+.dA .train-ph{margin-top:90px; text-align:center; color:var(--t3);}
+.dA .train-ph h3{font-family:"Outfit"; font-weight:700; font-size:20px; color:var(--t2);}
+.dA .train-ph p{margin-top:8px; font-size:13.5px; line-height:1.5;}

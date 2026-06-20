@@ -1,0 +1,52 @@
+/* Design C — Coach. Bold cover hero, big type, re-styled chat. All scoped under .dC. */
+
+.dC .cC-pad{display:flex; flex-direction:column; height:100%; padding-bottom:0;}
+
+/* shorter cover hero tuned for a chat screen */
+.dC .cC-cover{padding:52px 22px 26px; flex:none;}
+.dC .cC-cover h1{font-family:"Outfit"; font-weight:800; font-size:34px; line-height:1; letter-spacing:-1.2px; color:#042018; margin-top:18px;}
+.dC .cC-cover .cm{color:rgba(4,32,24,.78); margin-top:12px; font-size:13.5px; font-weight:600; max-width:24ch;}
+.dC .cC-mark{width:38px; height:38px; border-radius:12px; background:rgba(4,32,24,.22); display:grid; place-items:center; color:#042018;}
+
+/* scrolling chat feed */
+.dC .cC-feed{flex:1; min-height:0; overflow-y:auto; overflow-x:hidden; padding:22px 20px 8px; display:flex; flex-direction:column; gap:16px;}
+.dC .cC-feed::-webkit-scrollbar{display:none;}
+
+.dC .cC-line{display:flex; align-items:flex-end; gap:9px; max-width:88%;}
+.dC .cC-from{align-self:flex-start;}
+.dC .cC-mine{align-self:flex-end; justify-content:flex-end;}
+
+.dC .cC-bmark{flex:none; width:28px; height:28px; border-radius:10px; display:grid; place-items:center;
+  background:linear-gradient(180deg,var(--ebright),var(--emerald)); color:var(--on-emerald); margin-bottom:2px;}
+
+.dC .cC-bubble{font-size:14.5px; line-height:1.5; padding:13px 16px;}
+.dC .cC-cb{background:var(--raised); border:1px solid var(--hair); color:var(--t1);
+  border-radius:18px 18px 18px 6px;}
+.dC .cC-ub{background:linear-gradient(160deg,var(--ebright),var(--emerald)); color:var(--on-emerald); font-weight:600;
+  border-radius:18px 18px 6px 18px;}
+
+/* typing indicator */
+.dC .cC-typing{display:flex; gap:5px; align-items:center; padding:16px;}
+.dC .cC-typing i{width:7px; height:7px; border-radius:999px; background:var(--t3); display:block;
+  animation:cC-blink 1.1s infinite ease-in-out;}
+.dC .cC-typing i:nth-child(2){animation-delay:.18s;}
+.dC .cC-typing i:nth-child(3){animation-delay:.36s;}
+@keyframes cC-blink{0%,80%,100%{opacity:.25; transform:translateY(0);}40%{opacity:1; transform:translateY(-3px);}}
+
+/* quick-start chips */
+.dC .cC-chips{flex:none; display:flex; flex-wrap:wrap; gap:8px; padding:4px 20px 12px;}
+.dC .cC-chip{font-family:"DM Sans"; font-size:13px; font-weight:600; color:var(--t2);
+  background:var(--card); border:1px solid var(--hair); border-radius:999px; padding:10px 15px; cursor:pointer;}
+.dC .cC-chip:active{background:var(--raised);}
+
+/* input bar — the single emerald pop is the send button */
+.dC .cC-input{flex:none; display:flex; gap:10px; align-items:center; padding:10px 20px 96px;
+  background:linear-gradient(180deg, rgba(6,9,11,0), #06090b 32%);}
+.dC .cC-field{flex:1; font-family:"DM Sans"; font-size:15px; color:var(--t1);
+  background:var(--card); border:1px solid var(--hair); border-radius:999px; padding:15px 20px; outline:none;}
+.dC .cC-field::placeholder{color:var(--t3);}
+.dC .cC-field:focus{border-color:rgba(52,211,153,.45);}
+.dC .cC-send{flex:none; width:52px; height:52px; border-radius:999px; border:none; cursor:pointer;
+  display:grid; place-items:center; color:var(--on-emerald);
+  background:linear-gradient(180deg,var(--ebright),var(--emerald)); box-shadow:0 10px 24px -8px rgba(16,185,129,.7);}
+.dC .cC-send svg{width:20px; height:20px;}

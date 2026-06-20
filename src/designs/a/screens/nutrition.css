@@ -1,0 +1,53 @@
+/* Nutrition — Design A. All selectors scoped under .dA .nut-* */
+.dA .nut-head{display:flex; justify-content:space-between; align-items:center;}
+.dA .nut-title{font-family:"Outfit"; font-weight:800; font-size:27px; letter-spacing:-.6px; color:var(--t1);}
+
+.dA .nut-toggle{display:flex; gap:2px; padding:3px; border-radius:999px; background:var(--card); border:1px solid var(--hair);}
+.dA .nut-toggle button{font-family:"JetBrains Mono"; font-weight:500; font-size:9.5px; letter-spacing:1px; text-transform:uppercase; padding:6px 10px; border-radius:999px; border:none; background:transparent; color:var(--t3); cursor:pointer;}
+.dA .nut-toggle button.on{background:rgba(16,185,129,.12); color:var(--ebright);}
+
+.dA .nut-seg{display:flex; gap:7px; margin-top:18px;}
+.dA .nut-seg button{flex:1; font-family:"JetBrains Mono"; font-weight:500; font-size:11px; letter-spacing:1px; text-transform:uppercase; padding:9px 0; border-radius:11px; border:1px solid var(--hair); background:var(--card); color:var(--t3); cursor:pointer;}
+.dA .nut-seg button.on{background:var(--raised); color:var(--t1); border-top:1px solid var(--topedge);}
+
+/* hero */
+.dA .nut-hero{position:relative; margin-top:18px; background:var(--raised); border:1px solid var(--hair); border-top:1px solid var(--topedge); border-radius:22px; padding:24px 20px; display:flex; align-items:center; gap:22px; overflow:hidden;}
+.dA .nut-hero::before{content:""; position:absolute; inset:0; border-radius:22px; background:radial-gradient(80% 60% at 50% 0%, rgba(52,211,153,.12), transparent 70%); pointer-events:none;}
+.dA .nut-ring{position:relative; width:96px; height:96px; flex-shrink:0;}
+.dA .nut-ring svg{transform:rotate(-90deg);}
+.dA .nut-pct{position:absolute; inset:0; display:grid; place-items:center; font-family:"JetBrains Mono"; font-weight:700; font-size:14px; color:var(--ebright);}
+.dA .nut-num{font-family:"JetBrains Mono"; font-weight:700; font-size:52px; line-height:1; letter-spacing:-1px; color:var(--t1); font-variant-numeric:tabular-nums;}
+.dA .nut-numlabel{font-family:"JetBrains Mono"; font-size:10.5px; letter-spacing:1.4px; text-transform:uppercase; color:var(--t3); margin-top:7px;}
+.dA .nut-numsub{font-family:"JetBrains Mono"; font-size:12px; color:var(--t2); margin-top:4px;}
+.dA .nut-numsub b{color:var(--t1);}
+
+/* macro rows */
+.dA .nut-macros{margin-top:18px; background:var(--card); border:1px solid var(--hair); border-radius:18px; padding:4px 16px;}
+.dA .nut-macro{display:flex; align-items:center; gap:13px; padding:14px 0; border-bottom:1px solid var(--hair);}
+.dA .nut-macro:last-child{border-bottom:none;}
+.dA .nut-mname{font-size:13.5px; color:var(--t2); width:62px; flex-shrink:0;}
+.dA .nut-bar{flex:1; height:6px; border-radius:999px; background:rgba(255,255,255,.06); overflow:hidden;}
+.dA .nut-bar i{display:block; height:100%; background:linear-gradient(90deg,var(--emerald),var(--ebright)); border-radius:999px;}
+.dA .nut-mval{font-family:"JetBrains Mono"; font-weight:500; font-size:12.5px; color:var(--t2); white-space:nowrap; font-variant-numeric:tabular-nums; min-width:74px; text-align:right;}
+.dA .nut-mval b{color:var(--t1);}
+
+.dA .nut-sec{font-family:"JetBrains Mono"; font-weight:500; font-size:11px; letter-spacing:1.6px; color:var(--t3); text-transform:uppercase; margin:24px 0 11px;}
+
+/* meals */
+.dA .nut-meal{display:flex; align-items:center; gap:13px; padding:13px 0; border-bottom:1px solid var(--hair);}
+.dA .nut-meal:last-child{border-bottom:none;}
+.dA .nut-mtime{font-family:"JetBrains Mono"; font-size:11px; color:var(--t3); width:42px; flex-shrink:0; font-variant-numeric:tabular-nums;}
+.dA .nut-mtitle{flex:1; font-size:14.5px; color:var(--t1);}
+.dA .nut-mmeta{font-family:"JetBrains Mono"; font-size:12px; color:var(--t2); white-space:nowrap; font-variant-numeric:tabular-nums;}
+.dA .nut-mmeta b{color:var(--t1);}
+
+/* recents chips */
+.dA .nut-chips{display:flex; gap:8px; overflow-x:auto; padding-bottom:2px; margin-top:2px;}
+.dA .nut-chips::-webkit-scrollbar{display:none;}
+.dA .nut-chip{flex-shrink:0; display:flex; align-items:center; gap:6px; padding:9px 13px; border-radius:999px; border:1px solid var(--hair); background:var(--card); color:var(--t2); font-size:13px; cursor:pointer; font-family:inherit;}
+.dA .nut-chip svg{color:var(--t3);}
+
+/* add bar */
+.dA .nut-add{display:flex; gap:9px; margin-top:24px;}
+.dA .nut-addmain{flex:1; height:54px; border-radius:15px; border:none; background:linear-gradient(180deg,var(--ebright),var(--emerald)); color:var(--on-emerald); display:flex; align-items:center; justify-content:center; gap:9px; font-family:"Outfit"; font-weight:700; font-size:16px; cursor:pointer; box-shadow:0 8px 26px -8px rgba(16,185,129,.5);}
+.dA .nut-ai{width:54px; height:54px; border-radius:15px; border:1px solid var(--hair); background:var(--raised); color:var(--ebright); display:grid; place-items:center; cursor:pointer; font-family:"JetBrains Mono"; font-weight:700; font-size:13px; letter-spacing:.5px;}

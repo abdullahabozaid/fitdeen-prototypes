@@ -1,0 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&family=JetBrains+Mono:wght@500;700&family=Amiri:wght@400;700&display=swap');
+
+* { box-sizing: border-box; margin: 0; padding: 0; -webkit-font-smoothing: antialiased; }
+html, body, #root { height: 100%; }
+body { background: #04060a; color: #f3f6f4; font-family: 'DM Sans', system-ui, sans-serif; }
+
+/* ---------- chooser hub ---------- */
+.hub { min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 44px; padding: 56px 24px;
+  background: radial-gradient(80% 50% at 50% 0%, rgba(16,185,129,.10), transparent 60%), #04060a; }
+.hub-head { text-align: center; max-width: 640px; }
+.hub-eyebrow { font-family: 'JetBrains Mono', monospace; font-size: 12px; letter-spacing: 3px; text-transform: uppercase; color: #34d399; }
+.hub h1 { font-family: 'Outfit', sans-serif; font-weight: 800; font-size: 40px; letter-spacing: -1px; margin-top: 12px; }
+.hub-sub { color: rgba(232,240,236,.55); margin-top: 14px; font-size: 16px; line-height: 1.55; }
+.hub-grid { display: flex; gap: 20px; flex-wrap: wrap; justify-content: center; }
+.dcard { width: 264px; border-radius: 20px; padding: 24px; background: #0c1011; border: 1px solid rgba(255,255,255,.07); text-align: left; cursor: pointer; transition: transform .16s ease, border-color .16s ease; color: inherit; font-family: inherit; }
+.dcard:hover { transform: translateY(-4px); border-color: rgba(16,185,129,.5); }
+.dcard:disabled { opacity: .45; cursor: not-allowed; transform: none; }
+.dcard .tag { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 1.5px; color: #34d399; text-transform: uppercase; }
+.dcard h3 { font-family: 'Outfit', sans-serif; font-weight: 700; font-size: 21px; margin: 10px 0 7px; }
+.dcard p { color: rgba(232,240,236,.5); font-size: 13.5px; line-height: 1.5; }
+.dcard .enter { margin-top: 16px; display: inline-flex; align-items: center; gap: 6px; color: #10b981; font-weight: 600; font-size: 13.5px; }
+.dcard .soon { margin-top: 16px; font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 1.5px; color: rgba(232,240,236,.3); text-transform: uppercase; }
+
+/* ---------- device frame (shared chrome across designs) ---------- */
+.stage { min-height: 100vh; display: grid; place-items: center; padding: 20px;
+  background: radial-gradient(70% 45% at 50% 0%, rgba(16,185,129,.06), transparent 60%), #04060a; }
+.back { position: fixed; top: 20px; left: 20px; z-index: 50; display: flex; align-items: center; gap: 8px; padding: 10px 16px; border-radius: 999px; background: #0c1011; border: 1px solid rgba(255,255,255,.08); color: rgba(232,240,236,.7); font-size: 13px; cursor: pointer; font-family: inherit; }
+.back:hover { color: #fff; border-color: rgba(16,185,129,.4); }
+.phone { width: 390px; height: 844px; max-height: 94vh; position: relative; border-radius: 48px; background: #05070a; overflow: hidden;
+  box-shadow: 0 50px 140px -30px rgba(0,0,0,.85), 0 0 0 11px #0e1014, 0 0 0 12px #20242a; }
+.home-ind { position: absolute; bottom: 8px; left: 50%; transform: translateX(-50%); width: 128px; height: 5px; border-radius: 999px; background: rgba(255,255,255,.16); z-index: 40; pointer-events: none; }

@@ -1,0 +1,64 @@
+/* Design C — "Bold / Expressive": same brand, bigger moments. Full-bleed emerald gradient cover,
+   big display type, a floating pill nav. All scoped under .dC. */
+.dC{
+  --emerald:#10b981; --ebright:#34d399; --teal:#2dd4bf; --on-emerald:#042018;
+  --t1:#f4f7f6; --t2:rgba(233,242,238,.62); --t3:rgba(233,242,238,.38); --t4:rgba(233,242,238,.2);
+  --card:#0e1413; --raised:#13201d; --hair:rgba(255,255,255,.08);
+  --chest:#ef4444; --sh:#f59e0b; --tri:#8b5cf6;
+  position:absolute; inset:0; color:var(--t1); font-family:"DM Sans",system-ui,sans-serif;
+  background:
+    url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='66' height='66'><g fill='none' stroke='%2334d399' stroke-opacity='0.028'><rect x='21' y='21' width='24' height='24'/><rect x='21' y='21' width='24' height='24' transform='rotate(45 33 33)'/></g></svg>"),
+    #06090b;
+}
+.dC-scroll{position:absolute; inset:0; overflow-y:auto; overflow-x:hidden;}
+.dC-scroll::-webkit-scrollbar{display:none;}
+.dC .pad{padding:0 0 120px;}
+.dC .mono{font-family:"JetBrains Mono",monospace;}
+
+/* full-bleed gradient cover hero */
+.dC .cover{position:relative; padding:56px 22px 30px; overflow:hidden; border-bottom-left-radius:32px; border-bottom-right-radius:32px;
+  background:linear-gradient(155deg, #6ee7c7 0%, #34d399 22%, #10b981 62%, #0b7a59 100%);}
+.dC .ctop{display:flex; justify-content:space-between; align-items:center;}
+.dC .ctop .ce{color:rgba(4,32,24,.7);}
+.dC .avatarC{width:38px; height:38px; border-radius:12px; background:rgba(4,32,24,.22); display:grid; place-items:center; font-family:"Outfit"; font-weight:700; font-size:14px; color:#042018;}
+.dC .ce{font-family:"JetBrains Mono"; font-size:11px; letter-spacing:2px; text-transform:uppercase;}
+.dC .cover .clabel{color:rgba(4,32,24,.72); margin-top:20px;}
+.dC .cover h1{font-family:"Outfit"; font-weight:800; font-size:40px; line-height:.98; letter-spacing:-1.5px; color:#042018; margin-top:8px;}
+.dC .cmuscles{display:flex; gap:7px; margin-top:14px;}
+.dC .cmuscles .m{width:9px; height:9px; border-radius:999px; box-shadow:0 0 0 2px rgba(4,32,24,.15);}
+.dC .cover .cm{color:rgba(4,32,24,.78); margin-top:12px; font-size:13.5px; font-weight:600;}
+.dC .cover .cbtn{margin-top:20px; display:inline-flex; align-items:center; gap:9px; background:#042018; color:#eafff6; padding:15px 24px; border-radius:15px; font-family:"Outfit"; font-weight:700; font-size:15.5px; border:none; cursor:pointer;}
+
+/* big stat blocks */
+.dC .bigstats{display:flex; gap:11px; padding:22px 20px 0;}
+.dC .bstat{flex:1; background:var(--card); border:1px solid var(--hair); border-radius:18px; padding:15px;}
+.dC .bstat b{font-family:"JetBrains Mono"; font-weight:700; font-size:25px; display:block; color:var(--t1);}
+.dC .bstat span{font-family:"JetBrains Mono"; font-size:8.5px; letter-spacing:1px; color:var(--t3); text-transform:uppercase; display:block; margin-top:5px;}
+
+/* bold prayer strip */
+.dC .prayerC{margin:18px 20px 0; background:linear-gradient(120deg, var(--raised), var(--card)); border:1px solid var(--hair); border-radius:18px; padding:16px 18px; display:flex; align-items:center; gap:12px; width:calc(100% - 40px); cursor:pointer; color:inherit; font-family:inherit; text-align:left;}
+.dC .prayerC .pdots{display:flex; gap:7px;}
+.dC .prayerC .pd{width:9px;height:9px;border-radius:999px;border:1px solid var(--t4);}
+.dC .prayerC .pd.done{background:var(--emerald);border-color:var(--emerald);}
+.dC .prayerC .pd.next{border:2px solid var(--ebright);width:11px;height:11px;}
+.dC .prayerC .pt{flex:1; font-size:14px; color:var(--t2);}
+.dC .prayerC .pt b{color:var(--t1); font-family:"JetBrains Mono"; font-weight:500;}
+
+/* editorial hadith pull-quote */
+.dC .hadithC{padding:32px 26px 8px; text-align:center;}
+.dC .hadithC .glyph{font-size:18px; color:rgba(52,211,153,.6);}
+.dC .hadithC .ar{font-family:"Amiri"; font-size:27px; color:var(--t1); direction:rtl; line-height:1.75; margin:10px 0 6px;}
+.dC .hadithC .en{font-family:"Outfit"; font-weight:600; font-size:18px; line-height:1.35; color:var(--t1);}
+.dC .hadithC .cite{font-family:"JetBrains Mono"; font-size:10px; letter-spacing:1.5px; color:var(--t3); text-transform:uppercase; margin-top:10px;}
+
+/* floating pill nav (solid, no glass per brand) */
+.dC .tabbar{position:absolute; left:50%; transform:translateX(-50%); bottom:20px; display:flex; gap:3px; background:#0d1413; border:1px solid var(--hair); border-radius:999px; padding:7px 9px; box-shadow:0 18px 44px -12px rgba(0,0,0,.75); z-index:30;}
+.dC .tab{width:56px; height:48px; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:3px; border-radius:999px; color:var(--t3); background:none; border:none; cursor:pointer; font-family:inherit;}
+.dC .tab.active{color:var(--on-emerald); background:linear-gradient(180deg,var(--ebright),var(--emerald));}
+.dC .tab span{font-size:8.5px;}
+.dC .tab svg{width:21px; height:21px;}
+
+.dC .secpad{padding:0 20px;}
+.dC .ph{margin-top:120px;text-align:center;color:var(--t3);}
+.dC .ph h2{font-family:"Outfit";font-weight:700;font-size:22px;color:var(--t2);}
+.dC .ph p{margin-top:8px;font-size:14px;}

@@ -1,0 +1,40 @@
+/* Design B — Nutrition. Scoped under .dB so it can't clash with other designs. */
+
+.dB .nutb-hero{margin-top:18px;}
+.dB .nutb-hero .ring-num b{font-size:30px;}
+
+/* macro tiles override: taller, with fill bar + label row */
+.dB .nutb-macros{margin-top:12px;}
+.dB .nutb-mtile{padding:13px 13px 14px; position:relative; overflow:hidden;}
+.dB .nutb-mtop{display:flex; align-items:center; justify-content:space-between;}
+.dB .nutb-mname{font-family:"JetBrains Mono"; font-size:9px; letter-spacing:1px; color:var(--t3); text-transform:uppercase;}
+.dB .nutb-mpct{font-size:10px; font-weight:700; color:var(--ebright);}
+.dB .nutb-mval{margin-top:9px; font-family:"JetBrains Mono"; font-weight:700; font-size:20px; line-height:1; color:var(--t1);}
+.dB .nutb-mval .tu{font-size:11px; color:var(--t3); font-weight:500; margin-left:2px;}
+.dB .nutb-mbar{margin-top:11px; height:5px; border-radius:999px; background:rgba(255,255,255,.07); overflow:hidden;}
+.dB .nutb-mbar i{display:block; height:100%; border-radius:999px; background:linear-gradient(90deg,var(--edeep),var(--ebright));}
+
+/* section eyebrow row */
+.dB .nutb-sec{margin-top:22px; margin-bottom:11px;}
+
+/* today meals — flat rows separated by hairlines, NOT cards */
+.dB .nutb-meals{background:var(--card); border:1px solid var(--hair); border-radius:16px; padding:2px 14px;}
+.dB .nutb-meal{display:flex; align-items:center; gap:12px; padding:13px 0; border-bottom:1px solid var(--hair);}
+.dB .nutb-meal:last-child{border-bottom:none;}
+.dB .nutb-time{font-size:11px; color:var(--t3); width:42px; flex:none;}
+.dB .nutb-title{flex:1; font-size:14px; color:var(--t1);}
+.dB .nutb-meta{font-size:12px; color:var(--ebright); white-space:nowrap;}
+.dB .nutb-meta i{font-style:normal; font-size:10px; color:var(--t3); margin-left:1px;}
+
+/* quick-log chips */
+.dB .nutb-chips{display:flex; flex-wrap:wrap; gap:8px;}
+.dB .nutb-chip{display:inline-flex; align-items:center; gap:6px; padding:9px 13px; border-radius:999px; background:var(--card); border:1px solid var(--hair); color:var(--t2); font-family:inherit; font-size:13px; cursor:pointer;}
+.dB .nutb-chip svg{color:var(--ebright);}
+.dB .nutb-chip:active{border-color:var(--eline);}
+
+/* single emerald primary action */
+.dB .nutb-add{margin-top:20px; width:100%; height:52px; border-radius:16px; border:none; cursor:pointer;
+  display:flex; align-items:center; justify-content:center; gap:8px;
+  background:linear-gradient(180deg,var(--ebright),var(--emerald)); color:var(--on-emerald);
+  font-family:"Outfit"; font-weight:700; font-size:15px;
+  box-shadow:0 12px 28px -10px rgba(16,185,129,.7);}

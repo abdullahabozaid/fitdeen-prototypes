@@ -1,0 +1,56 @@
+/* Design C — Train. Bold cover hero + expressive exercise list. All scoped under .dC. */
+
+/* cover tweaks: clock + live completion bar */
+.dC .trn-cover .ctop{align-items:center;}
+.dC .trn-clock{font-size:14px; font-weight:700; color:#042018; background:rgba(4,32,24,.18); padding:7px 13px; border-radius:999px; letter-spacing:.5px;}
+.dC .trn-coverbar{margin-top:18px; height:7px; border-radius:999px; background:rgba(4,32,24,.18); overflow:hidden;}
+.dC .trn-coverbar span{display:block; height:100%; border-radius:999px; background:#042018; transition:width .35s ease;}
+
+/* exercise list */
+.dC .trn-list{padding:22px 20px 0; display:flex; flex-direction:column; gap:13px;}
+
+.dC .trn-item{position:relative; background:var(--card); border:1px solid var(--hair); border-radius:18px; padding:16px 16px 16px 22px; overflow:hidden; transition:border-color .2s;}
+.dC .trn-item.open{border-color:rgba(52,211,153,.28);}
+.dC .trn-item.done{background:var(--raised);}
+
+/* vertical completion bar — the Train signature, muscle-tinted */
+.dC .trn-bar{position:absolute; left:0; top:0; bottom:0; width:5px; background:var(--mc); opacity:.32; transition:opacity .2s;}
+.dC .trn-item.open .trn-bar,.dC .trn-item.done .trn-bar{opacity:1;}
+
+.dC .trn-top{display:flex; align-items:center; gap:12px;}
+.dC .trn-head{flex:1; background:none; border:none; padding:0; text-align:left; cursor:pointer; color:inherit; font-family:inherit; min-width:0;}
+.dC .trn-name{font-family:"Outfit"; font-weight:700; font-size:18px; letter-spacing:-.3px; color:var(--t1); line-height:1.1;}
+.dC .trn-item.done .trn-name{color:var(--t2);}
+.dC .trn-meta{display:flex; align-items:center; gap:8px; margin-top:8px; flex-wrap:wrap;}
+.dC .trn-mdot{width:8px; height:8px; border-radius:999px; flex:none;}
+.dC .trn-mname{font-size:12.5px; color:var(--t2); text-transform:capitalize;}
+.dC .trn-prog{font-size:11px; color:var(--t3); letter-spacing:.5px;}
+.dC .trn-prev{font-size:11px; color:var(--t3);}
+
+/* round quick-complete */
+.dC .trn-round{flex:none; width:42px; height:42px; border-radius:999px; display:grid; place-items:center; border:1.5px solid var(--hair); background:transparent; color:var(--t3); cursor:pointer; transition:all .18s;}
+.dC .trn-round:active{transform:scale(.9);}
+.dC .trn-round.on{border-color:var(--ebright); background:rgba(52,211,153,.14); color:var(--ebright);}
+
+/* expandable set table */
+.dC .trn-sets{margin-top:16px; padding-top:14px; border-top:1px solid var(--hair);}
+.dC .trn-shead{display:grid; grid-template-columns:38px 1fr 1fr 38px; align-items:center; font-size:9px; letter-spacing:1.5px; color:var(--t3); padding:0 4px 8px;}
+.dC .trn-shead span:nth-child(2),.dC .trn-shead span:nth-child(3){text-align:center;}
+
+.dC .trn-srow{display:grid; grid-template-columns:38px 1fr 1fr 38px; align-items:center; padding:8px 4px; border-radius:11px; transition:background .18s;}
+.dC .trn-srow span{font-size:15px; color:var(--t1);}
+.dC .trn-srow span:nth-child(2),.dC .trn-srow span:nth-child(3){text-align:center;}
+.dC .trn-sn{color:var(--t3) !important; font-size:13px !important;}
+.dC .trn-srow.set-done{background:rgba(52,211,153,.07);}
+.dC .trn-srow.set-done span{color:var(--t2);}
+
+.dC .trn-scheck{justify-self:end; width:30px; height:30px; border-radius:9px; display:grid; place-items:center; border:1.5px solid var(--hair); background:transparent; color:transparent; cursor:pointer; transition:all .16s;}
+.dC .trn-scheck:active{transform:scale(.88);}
+.dC .trn-scheck.on{border-color:var(--ebright); background:rgba(52,211,153,.16); color:var(--ebright);}
+
+/* footer — the single emerald pop */
+.dC .trn-footer{padding:26px 20px 0;}
+.dC .trn-finish{width:100%; display:flex; align-items:center; justify-content:center; gap:10px; padding:18px; border:none; border-radius:17px; cursor:pointer; font-family:"Outfit"; font-weight:800; font-size:17px; letter-spacing:-.2px; color:var(--on-emerald); background:linear-gradient(180deg,var(--ebright),var(--emerald)); box-shadow:0 16px 36px -14px rgba(16,185,129,.7); transition:opacity .2s,transform .12s;}
+.dC .trn-finish:active{transform:scale(.985);}
+.dC .trn-finish:disabled{opacity:.4; box-shadow:none; cursor:not-allowed;}
+.dC .trn-fnote{text-align:center; margin-top:12px; font-size:11px; letter-spacing:.5px; color:var(--t3);}

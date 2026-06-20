@@ -1,0 +1,58 @@
+/* Profile — Design A. All selectors scoped under .dA .prof-* . Reuses .dA tokens. */
+
+/* profile header */
+.dA .prof-head{display:flex; align-items:center; gap:16px; margin-top:14px;}
+.dA .prof-av{position:relative; width:72px; height:72px; border-radius:20px; background:var(--raised); border:1px solid var(--hair); border-top:1px solid var(--topedge); display:grid; place-items:center; font-family:"Outfit"; font-weight:800; font-size:26px; letter-spacing:-.5px; color:var(--t1);}
+.dA .prof-lvl{position:absolute; right:-7px; bottom:-7px; padding:2px 7px; border-radius:999px; background:rgba(16,185,129,.12); border:1px solid var(--hair); font-family:"JetBrains Mono"; font-weight:700; font-size:10px; color:var(--ebright);}
+.dA .prof-id{flex:1; min-width:0;}
+.dA .prof-name{font-family:"Outfit"; font-weight:800; font-size:25px; letter-spacing:-.6px; color:var(--t1);}
+.dA .prof-handle{font-family:"JetBrains Mono"; font-size:12px; color:var(--t3); margin-top:3px;}
+
+/* stat row */
+.dA .prof-stats{display:flex; margin-top:20px; background:var(--card); border:1px solid var(--hair); border-radius:16px;}
+.dA .prof-stat{flex:1; display:flex; flex-direction:column; align-items:center; gap:4px; padding:15px 0; border-right:1px solid var(--hair);}
+.dA .prof-stat:last-child{border-right:none;}
+.dA .prof-stat b{font-family:"JetBrains Mono"; font-weight:700; font-size:21px; color:var(--t1); font-variant-numeric:tabular-nums;}
+.dA .prof-stat span{font-family:"JetBrains Mono"; font-size:9.5px; letter-spacing:1.2px; text-transform:uppercase; color:var(--t3);}
+
+.dA .prof-count{font-family:"JetBrains Mono"; font-size:12px; color:var(--t3); font-variant-numeric:tabular-nums;}
+
+/* achievements grid */
+.dA .prof-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:10px;}
+.dA .prof-badge{position:relative; overflow:hidden; aspect-ratio:1/1.08; border-radius:16px; background:var(--card); border:1px solid var(--hair); padding:12px; display:flex; flex-direction:column; justify-content:flex-end;}
+.dA .prof-badge.on{background:rgba(16,185,129,.08); border-color:rgba(52,211,153,.28); border-top-color:var(--topedge);}
+
+/* girih / 8-point star engraving, CSS only (emerald, never metallic) */
+.dA .prof-girih{position:absolute; top:11px; left:11px; width:26px; height:26px; opacity:.18;
+  background:
+    linear-gradient(0deg, transparent 46%, currentColor 46%, currentColor 54%, transparent 54%),
+    linear-gradient(90deg, transparent 46%, currentColor 46%, currentColor 54%, transparent 54%),
+    linear-gradient(45deg, transparent 46%, currentColor 46%, currentColor 54%, transparent 54%),
+    linear-gradient(135deg, transparent 46%, currentColor 46%, currentColor 54%, transparent 54%);
+  -webkit-mask:radial-gradient(circle at center, #000 0 60%, transparent 61%); mask:radial-gradient(circle at center, #000 0 60%, transparent 61%);
+  color:var(--t3);}
+.dA .prof-badge.on .prof-girih{opacity:.9; color:var(--ebright);}
+.dA .prof-badge.on::before{content:""; position:absolute; inset:0; background:radial-gradient(70% 50% at 50% 0%, rgba(52,211,153,.16), transparent 70%); pointer-events:none;}
+
+.dA .prof-bname{font-family:"Outfit"; font-weight:700; font-size:13px; letter-spacing:-.2px; color:var(--t2);}
+.dA .prof-badge.on .prof-bname{color:var(--t1);}
+.dA .prof-bhint{font-family:"JetBrains Mono"; font-size:9px; letter-spacing:.6px; text-transform:uppercase; color:var(--t4); margin-top:3px;}
+.dA .prof-badge.on .prof-bhint{color:var(--t3);}
+
+/* premium banner — holds the single emerald pop */
+.dA .prof-banner{margin-top:24px; position:relative; overflow:hidden; background:var(--raised); border:1px solid var(--hair); border-top:1px solid var(--topedge); border-radius:20px; padding:20px;}
+.dA .prof-banner::before{content:""; position:absolute; inset:0; background:radial-gradient(80% 60% at 100% 0%, rgba(52,211,153,.14), transparent 65%); pointer-events:none;}
+.dA .prof-banner .ban-ey{color:var(--ebright);}
+.dA .prof-banner h3{font-family:"Outfit"; font-weight:700; font-size:19px; letter-spacing:-.3px; color:var(--t1); margin-top:9px;}
+.dA .prof-banner p{font-size:13.5px; color:var(--t2); margin-top:4px; line-height:1.45; max-width:230px;}
+.dA .prof-cta{margin-top:15px; height:46px; padding:0 22px; border:none; border-radius:13px; background:linear-gradient(180deg,var(--ebright),var(--emerald)); color:var(--on-emerald); font-family:"Outfit"; font-weight:700; font-size:15px; cursor:pointer; box-shadow:0 8px 24px -8px rgba(16,185,129,.5);}
+
+/* settings list */
+.dA .prof-list{background:var(--card); border:1px solid var(--hair); border-radius:16px; overflow:hidden;}
+.dA .prof-row{width:100%; display:flex; align-items:center; justify-content:space-between; padding:16px 16px; background:none; border:none; border-bottom:1px solid var(--hair); cursor:pointer; font-family:inherit;}
+.dA .prof-row:last-child{border-bottom:none;}
+.dA .prof-row:active{background:rgba(255,255,255,.03);}
+.dA .prof-rlabel{font-size:15px; color:var(--t1);}
+.dA .prof-row.danger .prof-rlabel{color:var(--chest);}
+.dA .prof-row.active .prof-rlabel{color:var(--ebright);}
+.dA .prof-tick{color:var(--ebright); display:grid; place-items:center;}

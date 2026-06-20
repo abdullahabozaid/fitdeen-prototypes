@@ -1,0 +1,36 @@
+/* Coach — Design A. All selectors scoped .dA .coach-* */
+.dA .coach-pad{display:flex; flex-direction:column; height:100%; box-sizing:border-box; padding-bottom:96px;}
+
+.dA .coach-title{display:flex; align-items:center; gap:10px;}
+.dA .coach-mark{display:grid; place-items:center; color:var(--ebright);}
+
+.dA .coach-feed{flex:1; min-height:0; overflow-y:auto; overflow-x:hidden; margin-top:20px; display:flex; flex-direction:column; gap:14px; padding-right:2px;}
+.dA .coach-feed::-webkit-scrollbar{display:none;}
+
+.dA .coach-line{display:flex; gap:9px; align-items:flex-end; max-width:86%;}
+.dA .coach-from{align-self:flex-start;}
+.dA .coach-mine{align-self:flex-end; justify-content:flex-end;}
+
+.dA .coach-bmark{flex:none; width:24px; height:24px; border-radius:999px; display:grid; place-items:center; color:var(--ebright); background:rgba(16,185,129,.09); border:1px solid var(--hair);}
+
+.dA .coach-bubble{font-size:14.5px; line-height:1.5; padding:12px 14px; border-radius:16px;}
+.dA .coach-cb{background:var(--card); border:1px solid var(--hair); border-top:1px solid var(--topedge); color:var(--t1); border-bottom-left-radius:6px;}
+.dA .coach-ub{background:var(--raised); border:1px solid var(--hair); color:var(--t2); border-bottom-right-radius:6px;}
+
+.dA .coach-typing{display:flex; gap:5px; padding:15px 14px;}
+.dA .coach-typing i{width:6px; height:6px; border-radius:999px; background:var(--ebright); opacity:.4; animation:coach-blink 1s infinite;}
+.dA .coach-typing i:nth-child(2){animation-delay:.18s;}
+.dA .coach-typing i:nth-child(3){animation-delay:.36s;}
+@keyframes coach-blink{0%,60%,100%{opacity:.25; transform:translateY(0);} 30%{opacity:1; transform:translateY(-2px);}}
+
+.dA .coach-chips{display:flex; flex-wrap:wrap; gap:8px; margin-top:14px;}
+.dA .coach-chip{font-family:"JetBrains Mono"; font-size:12px; letter-spacing:.3px; color:var(--t2); background:transparent; border:1px solid var(--hair); border-radius:999px; padding:9px 13px; cursor:pointer;}
+.dA .coach-chip:active{border-color:var(--topedge); color:var(--t1);}
+
+.dA .coach-input{display:flex; align-items:center; gap:10px; margin-top:14px;}
+.dA .coach-field{flex:1; height:50px; border-radius:14px; background:var(--card); border:1px solid var(--hair); color:var(--t1); font-family:inherit; font-size:14.5px; padding:0 16px; outline:none;}
+.dA .coach-field::placeholder{color:var(--t3);}
+.dA .coach-field:focus{border-color:var(--topedge);}
+
+.dA .coach-send{flex:none; width:50px; height:50px; border-radius:14px; border:none; cursor:pointer; display:grid; place-items:center; color:var(--on-emerald); background:linear-gradient(180deg,var(--ebright),var(--emerald)); box-shadow:0 8px 24px -8px rgba(16,185,129,.5);}
+.dA .coach-send:active{filter:brightness(.95);}

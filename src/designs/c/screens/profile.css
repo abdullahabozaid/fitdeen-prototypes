@@ -1,0 +1,78 @@
+/* Profile — Design C (bold/expressive). All selectors scoped under .dC. */
+
+/* cover: dark identity sitting on the bright emerald hero */
+.dC .prof-cover{ padding-bottom:34px; }
+.dC .prof-avbig{
+  width:78px; height:78px; border-radius:22px; margin-top:22px;
+  background:rgba(4,32,24,.22); display:grid; place-items:center;
+  font-family:"Outfit"; font-weight:800; font-size:30px; color:#042018; position:relative;
+}
+.dC .prof-lvltag{
+  position:absolute; right:-7px; bottom:-7px;
+  background:#042018; color:#eafff6; font-size:11px; font-weight:700;
+  padding:3px 8px; border-radius:999px; letter-spacing:.5px;
+}
+.dC .prof-cover h1{ margin-top:18px; }
+.dC .prof-handle{ margin-top:9px; }
+
+/* section scaffolding */
+.dC .prof-secpad{ padding:0 20px; margin-top:30px; }
+.dC .prof-sechead{ display:flex; align-items:baseline; justify-content:space-between; }
+.dC .prof-h2{ font-family:"Outfit"; font-weight:800; font-size:24px; letter-spacing:-.6px; color:var(--t1); }
+.dC .prof-count{ font-size:13px; color:var(--t3); }
+
+/* achievements: big two-up tiles, no identical-grid soup */
+.dC .prof-grid{ display:grid; grid-template-columns:1fr 1fr; gap:11px; margin-top:16px; }
+.dC .prof-badge{
+  position:relative; overflow:hidden;
+  background:var(--card); border:1px solid var(--hair); border-radius:18px;
+  padding:18px 16px 16px; min-height:104px;
+  display:flex; flex-direction:column; justify-content:flex-end;
+}
+.dC .prof-badge.on{
+  background:linear-gradient(150deg, rgba(16,185,129,.16), rgba(16,185,129,.05));
+  border-color:rgba(52,211,153,.4);
+}
+.dC .prof-bname{ font-family:"Outfit"; font-weight:700; font-size:16px; color:var(--t3); letter-spacing:-.3px; }
+.dC .prof-badge.on .prof-bname{ color:var(--t1); }
+.dC .prof-bhint{ font-family:"JetBrains Mono"; font-size:9.5px; letter-spacing:.8px; text-transform:uppercase; color:var(--t4); margin-top:6px; }
+.dC .prof-badge.on .prof-bhint{ color:var(--ebright); }
+
+/* girih 8-point star engraving — flat emerald line, drawn only when unlocked */
+.dC .prof-girih{
+  position:absolute; top:-16px; right:-16px; width:84px; height:84px;
+  opacity:0; pointer-events:none;
+  background:no-repeat center/contain
+    url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' fill='none' stroke='%2334d399' stroke-width='2'><polygon points='50,6 61,28 85,22 79,46 96,62 72,68 74,93 50,80 26,93 28,68 4,62 21,46 15,22 39,28'/><polygon points='50,20 58,36 75,33 70,50 82,62 65,66 66,84 50,74 34,84 35,66 18,62 30,50 25,33 42,36'/></svg>");
+}
+.dC .prof-badge.on .prof-girih{ opacity:.22; }
+
+/* premium banner: the single emerald pop lives in its CTA */
+.dC .prof-banner{
+  margin:30px 20px 0; padding:24px 22px;
+  background:linear-gradient(135deg, var(--raised), var(--card));
+  border:1px solid var(--hair); border-radius:22px;
+}
+.dC .prof-ban-ey{ color:var(--ebright); }
+.dC .prof-ban-h{ font-family:"Outfit"; font-weight:800; font-size:26px; letter-spacing:-.8px; color:var(--t1); margin-top:12px; }
+.dC .prof-banner p{ color:var(--t2); font-size:14.5px; margin-top:8px; max-width:230px; }
+.dC .prof-cta{
+  margin-top:20px; border:none; cursor:pointer;
+  background:linear-gradient(180deg, var(--ebright), var(--emerald));
+  color:var(--on-emerald); font-family:"Outfit"; font-weight:700; font-size:15.5px;
+  padding:15px 28px; border-radius:15px;
+}
+
+/* settings list */
+.dC .prof-set-h{ margin-bottom:14px; }
+.dC .prof-list{ display:flex; flex-direction:column; gap:9px; }
+.dC .prof-row{
+  display:flex; align-items:center; justify-content:space-between;
+  background:var(--card); border:1px solid var(--hair); border-radius:16px;
+  padding:17px 18px; cursor:pointer; font-family:inherit; text-align:left; width:100%;
+}
+.dC .prof-rlabel{ font-family:"Outfit"; font-weight:600; font-size:16px; color:var(--t1); letter-spacing:-.3px; }
+.dC .prof-chev{ color:var(--t3); display:flex; }
+.dC .prof-tick{ color:var(--ebright); display:flex; }
+.dC .prof-row.active{ border-color:rgba(52,211,153,.4); }
+.dC .prof-row.danger .prof-rlabel{ color:#f87171; }
