@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { nutrition } from '../../../mock/data'
 import { IconPlus, IconSparkle } from '../icons'
 import './nutrition.css'
+import SmartBasket from '../../../SmartBasket'
 
 type Meal = { name: string; time: string; kcal: number; p: number }
 
@@ -79,13 +80,15 @@ export default function Nutrition({ go }: { go: (t: string) => void }) {
           </div>
 
           <div className="nut-sec">Today's meals</div>
-          {meals.map((m, i) => (
-            <div className="nut-meal" key={i}>
-              <span className="nut-mtime">{m.time}</span>
-              <span className="nut-mtitle">{m.name}</span>
-              <span className="nut-mmeta"><b>{m.kcal}</b> kcal · {m.p}p</span>
-            </div>
-          ))}
+          <div className="nut-meals dA-stagger">
+            {meals.map((m, i) => (
+              <div className="nut-meal" key={i}>
+                <span className="nut-mtime">{m.time}</span>
+                <span className="nut-mtitle">{m.name}</span>
+                <span className="nut-mmeta"><b>{m.kcal}</b> kcal · {m.p}p</span>
+              </div>
+            ))}
+          </div>
 
           <div className="nut-sec">Quick log</div>
           <div className="nut-chips">
@@ -105,10 +108,12 @@ export default function Nutrition({ go }: { go: (t: string) => void }) {
             </button>
           </div>
         </>
+      ) : seg === 'basket' ? (
+        <SmartBasket />
       ) : (
         <div className="ph">
-          <h2>{seg === 'plans' ? 'Meal plans' : 'Smart basket'}</h2>
-          <p>{seg === 'plans' ? 'Saved plans land here. Build one from Today.' : 'Halal budget groceries. Coming to this build.'}</p>
+          <h2>Meal plans</h2>
+          <p>Saved plans land here. Build one from Today.</p>
         </div>
       )}
     </div>

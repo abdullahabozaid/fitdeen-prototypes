@@ -93,7 +93,7 @@
 .dC .cOnb-plan-k{font-size:14.5px; color:var(--t2);}
 .dC .cOnb-plan-v{font-family:"JetBrains Mono",monospace; font-size:13px; color:var(--t2); font-variant-numeric:tabular-nums;}
 .dC .cOnb-plan-v b{font-family:"JetBrains Mono",monospace; font-weight:700; font-size:17px; color:var(--t1);}
-.dC .cOnb-plan-tag{font-family:"Outfit",sans-serif; font-weight:600; font-size:13.5px; color:var(--ebright);}
+.dC .cOnb-plan-tag{font-family:"Outfit",sans-serif; font-weight:600; font-size:13.5px; color:var(--t1);}
 
 /* footer — the single emerald pop (dark surface), or dark pop on the cover */
 .dC .cOnb-foot{flex:none; padding-top:18px;}

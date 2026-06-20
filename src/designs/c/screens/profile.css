@@ -30,30 +30,30 @@
   display:flex; flex-direction:column; justify-content:flex-end;
 }
 .dC .prof-badge.on{
-  background:linear-gradient(150deg, rgba(16,185,129,.16), rgba(16,185,129,.05));
-  border-color:rgba(52,211,153,.4);
+  background:var(--raised);
+  border-color:rgba(255,255,255,.14);
 }
 .dC .prof-bname{ font-family:"Outfit"; font-weight:700; font-size:16px; color:var(--t3); letter-spacing:-.3px; }
 .dC .prof-badge.on .prof-bname{ color:var(--t1); }
 .dC .prof-bhint{ font-family:"JetBrains Mono"; font-size:9.5px; letter-spacing:.8px; text-transform:uppercase; color:var(--t4); margin-top:6px; }
-.dC .prof-badge.on .prof-bhint{ color:var(--ebright); }
+.dC .prof-badge.on .prof-bhint{ color:var(--t2); }
 
 /* girih 8-point star engraving — flat emerald line, drawn only when unlocked */
 .dC .prof-girih{
   position:absolute; top:-16px; right:-16px; width:84px; height:84px;
   opacity:0; pointer-events:none;
   background:no-repeat center/contain
-    url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' fill='none' stroke='%2334d399' stroke-width='2'><polygon points='50,6 61,28 85,22 79,46 96,62 72,68 74,93 50,80 26,93 28,68 4,62 21,46 15,22 39,28'/><polygon points='50,20 58,36 75,33 70,50 82,62 65,66 66,84 50,74 34,84 35,66 18,62 30,50 25,33 42,36'/></svg>");
+    url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' fill='none' stroke='%23f4f7f6' stroke-width='2'><polygon points='50,6 61,28 85,22 79,46 96,62 72,68 74,93 50,80 26,93 28,68 4,62 21,46 15,22 39,28'/><polygon points='50,20 58,36 75,33 70,50 82,62 65,66 66,84 50,74 34,84 35,66 18,62 30,50 25,33 42,36'/></svg>");
 }
-.dC .prof-badge.on .prof-girih{ opacity:.22; }
+.dC .prof-badge.on .prof-girih{ opacity:.12; }
 
 /* premium banner: the single emerald pop lives in its CTA */
 .dC .prof-banner{
   margin:30px 20px 0; padding:24px 22px;
-  background:linear-gradient(135deg, var(--raised), var(--card));
+  background:var(--card);
   border:1px solid var(--hair); border-radius:22px;
 }
-.dC .prof-ban-ey{ color:var(--ebright); }
+.dC .prof-ban-ey{ color:var(--t3); }
 .dC .prof-ban-h{ font-family:"Outfit"; font-weight:800; font-size:26px; letter-spacing:-.8px; color:var(--t1); margin-top:12px; }
 .dC .prof-banner p{ color:var(--t2); font-size:14.5px; margin-top:8px; max-width:230px; }
 .dC .prof-cta{
@@ -74,5 +74,5 @@
 .dC .prof-rlabel{ font-family:"Outfit"; font-weight:600; font-size:16px; color:var(--t1); letter-spacing:-.3px; }
 .dC .prof-chev{ color:var(--t3); display:flex; }
 .dC .prof-tick{ color:var(--ebright); display:flex; }
-.dC .prof-row.active{ border-color:rgba(52,211,153,.4); }
+.dC .prof-row.active{ border-color:rgba(255,255,255,.18); }
 .dC .prof-row.danger .prof-rlabel{ color:#f87171; }

@@ -51,3 +51,25 @@ export const achievements = [
   { name: 'First Rep', unlocked: true }, { name: '7-Day Streak', unlocked: true }, { name: 'Fajr Flow', unlocked: true },
   { name: 'Century', unlocked: false }, { name: 'Ramadan', unlocked: false }, { name: 'PR Machine', unlocked: false },
 ]
+
+// Smart Basket "market" — deterministic mock: same basket builds every time.
+export const smartBasket = {
+  budget: 60, people: 2, days: 7, total: 56.39, proteinWk: 2590,
+  steps: ['Reading your budget', 'Filtering halal-only', 'Optimising protein per £', 'Building your week'],
+  build: [
+    { name: 'Halal Eat Chicken Breast', shop: 'Tesco', qty: 2, price: 6.0, halal: 'certified', aisle: 'Meat' },
+    { name: 'Najma Halal Sausages', shop: 'Tesco', qty: 1, price: 2.5, halal: 'certified', aisle: 'Meat' },
+    { name: 'British Whole Milk 4pt', shop: 'Tesco', qty: 2, price: 2.9, halal: 'natural', aisle: 'Dairy & eggs' },
+    { name: 'Free Range Eggs 12', shop: "Sainsbury's", qty: 1, price: 2.2, halal: 'natural', aisle: 'Dairy & eggs' },
+    { name: 'Greek Style Yogurt 1kg', shop: 'Tesco', qty: 1, price: 2.4, halal: 'natural', aisle: 'Dairy & eggs' },
+    { name: 'Arla Cottage Cheese', shop: 'Tesco', qty: 2, price: 2.0, halal: 'natural', aisle: 'Dairy & eggs' },
+    { name: 'Laila Red Lentils 2kg', shop: "Sainsbury's", qty: 1, price: 2.0, halal: 'natural', aisle: 'Cupboard' },
+    { name: 'Basmati Rice 5kg', shop: 'Tesco', qty: 1, price: 6.5, halal: 'natural', aisle: 'Cupboard' },
+    { name: 'Wholewheat Pasta 1kg', shop: 'Tesco', qty: 2, price: 2.1, halal: 'natural', aisle: 'Cupboard' },
+    { name: 'Rolled Oats 1kg', shop: 'Tesco', qty: 1, price: 1.3, halal: 'natural', aisle: 'Cupboard' },
+    { name: 'Tinned Chickpeas', shop: 'Tesco', qty: 3, price: 1.05, halal: 'natural', aisle: 'Cupboard' },
+    { name: 'Peanut Butter', shop: 'Tesco', qty: 1, price: 1.5, halal: 'natural', aisle: 'Cupboard' },
+    { name: 'Bananas (loose)', shop: 'Tesco', qty: 1, price: 1.1, halal: 'natural', aisle: 'Fruit & veg' },
+    { name: 'Mixed Frozen Veg', shop: 'Aldi', qty: 2, price: 2.0, halal: 'natural', aisle: 'Frozen' },
+  ],
+}

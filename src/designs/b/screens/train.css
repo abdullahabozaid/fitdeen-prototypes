@@ -16,26 +16,26 @@
 .dB .trn-list{margin-top:16px; display:flex; flex-direction:column; gap:9px;}
 .dB .trn-card{position:relative; background:var(--card); border:1px solid var(--hair); border-radius:16px; overflow:hidden; transition:border-color .25s ease, background .25s ease;}
 .dB .trn-card.open{border-color:var(--eline);}
-.dB .trn-card.done{background:linear-gradient(150deg, rgba(16,185,129,.12), var(--card) 60%); border-color:rgba(52,211,153,.32);}
+.dB .trn-card.done{background:var(--card2); border-color:var(--hair);}
 
 .dB .trn-row{display:flex; align-items:center; gap:13px; padding:14px 14px 14px 16px;}
 /* signature: vertical completion bar */
 .dB .trn-bar{position:absolute; left:0; top:12px; bottom:12px; width:3px; border-radius:999px; background:var(--hair); transition:background .25s ease;}
-.dB .trn-card.done .trn-bar{background:linear-gradient(180deg,var(--ebright),var(--emerald)); box-shadow:0 0 10px -1px rgba(52,211,153,.5);}
+.dB .trn-card.done .trn-bar{background:var(--emerald);}
 
 .dB .trn-body{flex:1; min-width:0; text-align:left; background:none; border:none; cursor:pointer; color:inherit; font-family:inherit; padding:0;}
 .dB .trn-name{font-family:"Outfit"; font-weight:700; font-size:15.5px; color:var(--t1); transition:color .2s ease;}
-.dB .trn-card.done .trn-name{color:var(--ebright);}
+.dB .trn-card.done .trn-name{color:var(--t1);}
 .dB .trn-sub{display:flex; align-items:center; gap:8px; margin-top:5px;}
 .dB .trn-mdot{width:6px; height:6px; border-radius:999px; flex:none;}
 .dB .trn-mname{font-family:"JetBrains Mono"; font-size:9.5px; letter-spacing:1.2px; color:var(--t3); text-transform:uppercase;}
 .dB .trn-prev{font-family:"JetBrains Mono"; font-size:10.5px; color:var(--t4); margin-left:auto; padding-left:8px; white-space:nowrap;}
 
 .dB .trn-tally{font-family:"JetBrains Mono"; font-weight:600; font-size:11px; color:var(--t3); flex:none; font-variant-numeric:tabular-nums;}
-.dB .trn-card.done .trn-tally{color:var(--ebright);}
+.dB .trn-card.done .trn-tally{color:var(--t2);}
 
 .dB .trn-check{flex:none; width:30px; height:30px; border-radius:10px; border:1px solid var(--hair); background:var(--raised); display:grid; place-items:center; cursor:pointer; color:var(--t3); transition:all .2s ease;}
-.dB .trn-check.on{background:linear-gradient(180deg,var(--ebright),var(--emerald)); border-color:transparent; color:var(--on-emerald); box-shadow:0 6px 16px -6px rgba(16,185,129,.7);}
+.dB .trn-check.on{background:var(--emerald); border-color:transparent; color:var(--on-emerald);}
 
 /* expandable set table */
 .dB .trn-sets{margin:0 14px 14px 16px; background:rgba(0,0,0,.22); border:1px solid var(--hair); border-radius:12px; overflow:hidden;}
@@ -56,3 +56,25 @@
 .dB .trn-finish{margin-top:22px; width:100%; height:54px; border:none; border-radius:16px; background:linear-gradient(180deg,var(--ebright),var(--edeep)); color:var(--on-emerald); display:flex; align-items:center; justify-content:center; gap:9px; font-family:"Outfit"; font-weight:700; font-size:16px; cursor:pointer; box-shadow:0 12px 30px -8px rgba(16,185,129,.6);}
 .dB .trn-finish:disabled{opacity:.4; box-shadow:none; cursor:default;}
 .dB .trn-fnote{text-align:center; font-family:"JetBrains Mono"; font-size:10.5px; color:var(--t3); margin-top:11px; font-variant-numeric:tabular-nums;}
+
+/* active / rest view toggle */
+.dB .trn-vtoggle{display:flex; gap:4px; margin-top:16px; background:var(--card); border:1px solid var(--hair); border-radius:12px; padding:4px;}
+.dB .trn-vtoggle button{flex:1; padding:9px; border:none; background:none; border-radius:9px; color:var(--t3); font-family:inherit; font-size:13px; font-weight:600; cursor:pointer;}
+.dB .trn-vtoggle button.on{background:var(--raised); color:var(--ebright);}
+
+/* rest day — calm view, no list */
+.dB .trn-rest{margin-top:30px; display:flex; flex-direction:column;}
+.dB .trn-rest-glyph{font-size:34px; color:rgba(52,211,153,.4); line-height:1;}
+.dB .trn-rest-eye{margin-top:18px; color:var(--t3);}
+.dB .trn-rest-h{font-family:"Outfit"; font-weight:800; font-size:30px; letter-spacing:-.7px; color:var(--t1); margin-top:9px;}
+.dB .trn-rest-lead{margin-top:11px; font-size:14.5px; line-height:1.55; color:var(--t2); max-width:32ch;}
+
+.dB .trn-rest-next{margin-top:26px; background:var(--card); border:1px solid var(--hair); border-radius:16px; padding:15px 16px;}
+.dB .trn-rest-next .eyebrow{display:block; margin-bottom:10px;}
+.dB .trn-rest-nrow{display:flex; align-items:baseline; justify-content:space-between; gap:12px;}
+.dB .trn-rest-ntitle{font-family:"Outfit"; font-weight:700; font-size:16px; color:var(--t1);}
+.dB .trn-rest-nmeta{font-size:11.5px; color:var(--t3); white-space:nowrap;}
+
+.dB .trn-rest-hadith{margin-top:22px; padding-top:18px; border-top:1px solid var(--hair);}
+.dB .trn-rest-hadith .en{font-size:15px; line-height:1.5; color:var(--t1); font-family:"Amiri","Outfit",serif;}
+.dB .trn-rest-hadith .cite{margin-top:8px; font-size:9.5px; letter-spacing:1px; color:var(--t3); text-transform:uppercase;}

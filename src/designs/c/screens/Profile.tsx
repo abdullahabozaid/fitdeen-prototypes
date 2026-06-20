@@ -43,7 +43,7 @@ export default function Profile({ go, onReplayOnboarding }: { go: (t: string) =>
         <div className="cm prof-handle">@abdullah · Level {user.level}</div>
       </div>
 
-      <div className="bigstats">
+      <div className="bigstats dC-stagger">
         <div className="bstat"><b>{profile.sessions}</b><span>Sessions</span></div>
         <div className="bstat"><b>{profile.streak}</b><span>Streak</span></div>
         <div className="bstat"><b>{profile.days}</b><span>Days</span></div>
@@ -54,7 +54,7 @@ export default function Profile({ go, onReplayOnboarding }: { go: (t: string) =>
           <h2 className="prof-h2">Achievements</h2>
           <span className="prof-count mono">{unlocked} / {achievements.length}</span>
         </div>
-        <div className="prof-grid">
+        <div className="prof-grid dC-stagger">
           {achievements.map((a) => {
             const on = a.unlocked
             return (
@@ -77,7 +77,7 @@ export default function Profile({ go, onReplayOnboarding }: { go: (t: string) =>
 
       <div className="prof-secpad">
         <h2 className="prof-h2 prof-set-h">Settings</h2>
-        <div className="prof-list">
+        <div className="prof-list dC-stagger">
           {settings.map((row) => (
             <button
               key={row.id}

@@ -64,7 +64,7 @@ export default function Profile({ go, onReplayOnboarding }: { go: (t: string) =>
         <div className="eyebrow">Achievements</div>
         <span className="prof-count">{unlocked} / {achievements.length}</span>
       </div>
-      <div className="prof-grid">
+      <div className="prof-grid dA-stagger">
         {stars.map((name) => {
           const a = achievements.find((x) => x.name === name)
           const on = !!a?.unlocked
@@ -88,7 +88,7 @@ export default function Profile({ go, onReplayOnboarding }: { go: (t: string) =>
       <div className="sec">
         <div className="eyebrow">Settings</div>
       </div>
-      <div className="prof-list">
+      <div className="prof-list dA-stagger">
         {settings.map((row) => (
           <button
             key={row.id}

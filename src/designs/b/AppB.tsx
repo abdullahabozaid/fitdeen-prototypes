@@ -6,7 +6,7 @@ import Nutrition from './screens/Nutrition'
 import Coach from './screens/Coach'
 import Profile from './screens/Profile'
 import Onboarding from './screens/Onboarding'
-import { IconHome, IconDumbbell, IconApple, IconUser, IconPlus } from '../a/icons'
+import { IconHome, IconDumbbell, IconApple, IconUser, IconPlus, IconSparkle } from '../a/icons'
 
 export default function AppB() {
   const [tab, setTab] = useState('home')
@@ -41,9 +41,10 @@ export default function AppB() {
             {sheet && (
               <div className="sheet-back" onClick={() => setSheet(false)}>
                 <div className="sheet" onClick={(e) => e.stopPropagation()}>
-                  <h4>Quick log</h4>
+                  <h4>Quick actions</h4>
                   <button className="qopt" onClick={() => go('nutrition')}><IconApple size={20} /> Log a meal</button>
                   <button className="qopt" onClick={() => go('train')}><IconDumbbell size={20} /> Start a workout</button>
+                  <button className="qopt" onClick={() => go('coach')}><IconSparkle size={20} /> Ask the coach</button>
                   <button className="qopt" onClick={() => setSheet(false)}><IconPlus size={20} /> Log water</button>
                 </div>
               </div>

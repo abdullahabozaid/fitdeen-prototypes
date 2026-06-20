@@ -9,6 +9,22 @@
 .dA .train-timer.run .train-pulse{background:var(--ebright); box-shadow:0 0 0 0 rgba(52,211,153,.5); animation:train-blink 1.8s ease-in-out infinite;}
 @keyframes train-blink{0%,100%{opacity:1;}50%{opacity:.35;}}
 
+/* active / rest-day view toggle — mono, sits above the day's segmented control */
+.dA .train-day{display:inline-flex; gap:2px; margin-top:20px; padding:3px; background:var(--card); border:1px solid var(--hair); border-radius:999px;}
+.dA .train-dseg{height:30px; padding:0 15px; border:none; border-radius:999px; background:transparent; color:var(--t3); font-family:"JetBrains Mono"; font-weight:500; font-size:10.5px; letter-spacing:1.2px; text-transform:uppercase; cursor:pointer;}
+.dA .train-dseg.on{background:var(--raised); color:var(--t1); box-shadow:0 1px 0 var(--hair) inset;}
+
+/* rest-day calm view */
+.dA .train-rest{margin-top:30px;}
+.dA .train-rest-h{font-family:"Outfit"; font-weight:800; font-size:32px; letter-spacing:-.8px; color:var(--t1); margin-top:12px;}
+.dA .train-rest-lead{font-size:15.5px; line-height:1.6; color:var(--t2); margin-top:12px; max-width:32ch;}
+.dA .train-rest-next{display:flex; justify-content:space-between; align-items:center; margin-top:26px; padding:18px 18px; background:var(--card); border:1px solid var(--hair); border-radius:16px;}
+.dA .train-rest-k{font-family:"JetBrains Mono"; font-size:10.5px; letter-spacing:1.4px; text-transform:uppercase; color:var(--t3);}
+.dA .train-rest-v{font-family:"Outfit"; font-weight:600; font-size:15px; color:var(--t1);}
+.dA .train-rest-hadith{margin-top:24px; text-align:center; background:var(--card); border:1px solid var(--hair); border-radius:18px; padding:24px 22px 20px;}
+.dA .train-rest-hadith .glyph{font-size:16px; color:rgba(52,211,153,.6); line-height:1;}
+.dA .train-rest-hadith p{font-size:15.5px; line-height:1.6; color:var(--t1); margin:12px 0 4px; max-width:30ch; margin-left:auto; margin-right:auto;}
+
 .dA .train-segs{display:flex; gap:4px; margin-top:20px; padding:4px; background:var(--card); border:1px solid var(--hair); border-radius:13px;}
 .dA .train-seg{flex:1; height:36px; border:none; border-radius:9px; background:transparent; color:var(--t3); font-family:"JetBrains Mono"; font-weight:500; font-size:11px; letter-spacing:1.4px; cursor:pointer;}
 .dA .train-seg.on{background:var(--raised); color:var(--t1); box-shadow:0 1px 0 var(--topedge) inset;}

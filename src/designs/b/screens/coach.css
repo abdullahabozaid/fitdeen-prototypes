@@ -5,8 +5,7 @@
 
 /* header mark echoes the score-ring gradient surface, not a primary action */
 .dB .bcoach-mark{width:40px; height:40px; border-radius:13px; flex:none;
-  background:linear-gradient(155deg, rgba(16,185,129,.28), rgba(16,185,129,.05) 60%, var(--card2));
-  border:1px solid var(--eline); display:grid; place-items:center; color:var(--ebright);}
+  background:var(--card); border:1px solid var(--hair); display:grid; place-items:center; color:var(--ebright);}
 
 /* feed */
 .dB .bcoach-feed{flex:1; min-height:0; overflow-y:auto; margin-top:18px; padding:2px 0 6px;
@@ -18,14 +17,13 @@
 .dB .bcoach-mine{align-self:flex-end;}
 
 .dB .bcoach-bmark{width:24px; height:24px; border-radius:9px; flex:none; margin-bottom:2px;
-  background:linear-gradient(180deg,var(--ebright),var(--edeep)); color:var(--on-emerald);
-  display:grid; place-items:center; box-shadow:0 6px 16px -8px rgba(16,185,129,.7);}
+  background:rgba(16,185,129,.12); border:1px solid var(--hair); color:var(--ebright);
+  display:grid; place-items:center;}
 
 .dB .bcoach-bubble{font-size:14px; line-height:1.5; padding:13px 15px; border-radius:18px;}
 
 /* coach reply: gradient data-card surface with emerald top hairline */
-.dB .bcoach-cb{background:linear-gradient(160deg, rgba(16,185,129,.12), var(--card2) 70%);
-  border:1px solid var(--hair); border-top:1px solid var(--eline); border-bottom-left-radius:7px;
+.dB .bcoach-cb{background:var(--card); border:1px solid var(--hair); border-bottom-left-radius:7px;
   color:var(--t1);}
 
 /* user bubble: solid raised, quiet */

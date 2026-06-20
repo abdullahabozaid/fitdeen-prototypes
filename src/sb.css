@@ -1,0 +1,85 @@
+/* Smart Basket — shared, themed by the host design root (.dA/.dB/.dC) via inherited CSS vars.
+   Emerald discipline: data (meter), one CTA (build), active toggle. Everything else mono/grey. */
+.sb { --eo: cubic-bezier(0.23, 1, 0.32, 1); }
+.sb .sb-eyebrow { font-family: "JetBrains Mono", monospace; font-size: 10.5px; letter-spacing: 1.6px; color: var(--t3); text-transform: uppercase; }
+.sb .sb-h { font-family: "Outfit", sans-serif; font-weight: 800; font-size: 24px; letter-spacing: -.5px; margin-top: 8px; color: var(--t1); line-height: 1.1; }
+.sb .sb-sub { color: var(--t2); font-size: 14px; line-height: 1.5; margin-top: 10px; max-width: 32ch; }
+
+.sb .sb-params { display: flex; gap: 10px; margin-top: 20px; }
+.sb .sb-param { flex: 1; background: var(--card); border: 1px solid var(--hair); border-radius: 14px; padding: 13px; }
+.sb .sb-param span { font-family: "JetBrains Mono"; font-size: 9px; letter-spacing: 1px; color: var(--t3); text-transform: uppercase; display: block; }
+.sb .sb-param b { font-family: "JetBrains Mono"; font-weight: 700; font-size: 22px; color: var(--t1); display: block; margin-top: 6px; }
+
+.sb .sb-build { margin-top: 22px; width: 100%; height: 54px; border-radius: 15px; border: none; cursor: pointer;
+  display: flex; align-items: center; justify-content: center; gap: 9px; font-family: "Outfit"; font-weight: 700; font-size: 16px;
+  background: linear-gradient(180deg, var(--ebright), var(--emerald)); color: var(--on-emerald);
+  box-shadow: 0 10px 26px -8px rgba(16, 185, 129, .5); transition: transform 150ms var(--eo); }
+.sb .sb-build:active { transform: scale(.97); }
+
+/* loading */
+.sb .sb-loading { padding: 26px 0; display: flex; flex-direction: column; align-items: center; gap: 22px; }
+.sb .sb-spinner { width: 38px; height: 38px; border-radius: 999px; border: 3px solid var(--hair); border-top-color: var(--emerald); animation: sb-spin .7s linear infinite; }
+@keyframes sb-spin { to { transform: rotate(360deg); } }
+.sb .sb-steps { width: 100%; display: flex; flex-direction: column; gap: 11px; }
+.sb .sb-step { display: flex; align-items: center; gap: 10px; font-size: 14px; color: var(--t3); transition: color 200ms var(--eo); }
+.sb .sb-step.on { color: var(--t1); }
+.sb .sb-stepmark { width: 18px; display: grid; place-items: center; color: var(--emerald); }
+.sb .sb-stepdot { width: 6px; height: 6px; border-radius: 999px; background: var(--t4, rgba(255,255,255,.2)); }
+
+/* view toggle */
+.sb .sb-toggle { display: flex; gap: 4px; background: var(--card); border: 1px solid var(--hair); border-radius: 12px; padding: 4px; }
+.sb .sb-toggle button { flex: 1; padding: 9px; border: none; background: none; border-radius: 9px; color: var(--t3); font-family: inherit; font-size: 13px; font-weight: 600; cursor: pointer; transition: background 160ms var(--eo), color 160ms var(--eo); }
+.sb .sb-toggle button.on { background: var(--raised); color: var(--t1); }
+
+/* hero */
+.sb .sb-hero { margin-top: 14px; background: var(--card); border: 1px solid var(--hair); border-radius: 18px; padding: 18px; }
+.sb .sb-hero-top { display: flex; justify-content: space-between; align-items: flex-end; }
+.sb .sb-htotal { font-family: "JetBrains Mono"; font-weight: 700; font-size: 38px; letter-spacing: -1px; line-height: 1; color: var(--t1); }
+.sb .sb-hgoal { font-family: "JetBrains Mono"; font-size: 12px; color: var(--t3); margin-top: 6px; }
+.sb .sb-hprot { text-align: right; }
+.sb .sb-hprot b { font-family: "JetBrains Mono"; font-weight: 700; font-size: 18px; color: var(--ebright); display: block; }
+.sb .sb-hprot span { font-family: "JetBrains Mono"; font-size: 9px; letter-spacing: 1px; color: var(--t3); text-transform: uppercase; }
+.sb .sb-meter { height: 7px; border-radius: 999px; background: rgba(255, 255, 255, .07); overflow: hidden; margin: 14px 0 12px; }
+.sb .sb-meter i { display: block; height: 100%; border-radius: 999px; background: linear-gradient(90deg, var(--emerald), var(--ebright)); }
+.sb .sb-note { font-size: 12px; color: var(--t2); line-height: 1.4; }
+
+/* item list */
+.sb .sb-items { margin-top: 12px; background: var(--card); border: 1px solid var(--hair); border-radius: 16px; padding: 4px 14px; }
+.sb .sb-item { display: flex; align-items: center; gap: 12px; padding: 12px 0; border-bottom: 1px solid var(--hair); }
+.sb .sb-item:last-child { border-bottom: none; }
+.sb .sb-iqty { font-family: "JetBrains Mono"; font-weight: 700; font-size: 13px; color: var(--t2); width: 26px; flex: none; }
+.sb .sb-iinfo { flex: 1; min-width: 0; }
+.sb .sb-iname { font-size: 14px; color: var(--t1); }
+.sb .sb-imeta { font-size: 11.5px; color: var(--t3); margin-top: 3px; display: flex; align-items: center; gap: 8px; }
+.sb .sb-tag { font-family: "JetBrains Mono"; font-size: 8.5px; letter-spacing: .5px; text-transform: uppercase; padding: 2px 7px; border-radius: 6px; }
+.sb .sb-tag.certified { color: var(--ebright); background: rgba(16, 185, 129, .12); }
+.sb .sb-tag.natural { color: var(--t3); background: rgba(255, 255, 255, .05); }
+.sb .sb-iprice { font-family: "JetBrains Mono"; font-weight: 700; font-size: 14px; color: var(--t1); }
+
+/* shopping list */
+.sb .sb-list { margin-top: 12px; }
+.sb .sb-aisle { margin-bottom: 16px; }
+.sb .sb-aisle-h { font-family: "JetBrains Mono"; font-size: 10px; letter-spacing: 1.4px; color: var(--t3); text-transform: uppercase; margin-bottom: 8px; }
+.sb .sb-check { display: flex; align-items: center; gap: 12px; width: 100%; padding: 12px 14px; margin-bottom: 7px; border-radius: 12px; background: var(--card); border: 1px solid var(--hair); cursor: pointer; font-family: inherit; text-align: left; transition: transform 140ms var(--eo); }
+.sb .sb-check:active { transform: scale(.99); }
+.sb .sb-box { width: 22px; height: 22px; flex: none; border-radius: 7px; border: 1px solid var(--hair); display: grid; place-items: center; color: var(--on-emerald); }
+.sb .sb-check.done .sb-box { background: var(--emerald); border-color: var(--emerald); }
+.sb .sb-check.done .sb-cname { color: var(--t3); text-decoration: line-through; }
+.sb .sb-cname { flex: 1; font-size: 14px; color: var(--t1); }
+.sb .sb-cqty { font-family: "JetBrains Mono"; font-size: 12px; color: var(--t3); }
+
+/* actions */
+.sb .sb-actions { display: flex; gap: 10px; margin-top: 16px; }
+.sb .sb-secondary { flex: 1; height: 48px; border-radius: 13px; background: var(--raised); border: 1px solid var(--hair); color: var(--t1); font-family: "Outfit"; font-weight: 600; font-size: 14px; cursor: pointer; transition: transform 140ms var(--eo); }
+.sb .sb-secondary:active { transform: scale(.98); }
+
+/* generic Nutrition -> Smart Basket entry helpers (themed by host design vars) */
+.nseg { display: flex; gap: 4px; background: var(--card); border: 1px solid var(--hair); border-radius: 12px; padding: 4px; margin: 0 0 16px; }
+.nseg button { flex: 1; padding: 10px; border: none; background: none; border-radius: 9px; color: var(--t3); font-family: inherit; font-size: 13px; font-weight: 600; cursor: pointer; transition: background 160ms cubic-bezier(0.23,1,0.32,1), color 160ms; }
+.nseg button.on { background: var(--raised); color: var(--t1); }
+.nentry { display: flex; align-items: center; justify-content: space-between; gap: 12px; width: 100%; text-align: left; cursor: pointer; background: var(--card); border: 1px solid var(--hair); border-radius: 16px; padding: 16px; font-family: inherit; transition: transform 150ms cubic-bezier(0.23,1,0.32,1); }
+.nentry:active { transform: scale(.99); }
+.nentry .ne-t { font-family: "Outfit"; font-weight: 700; font-size: 16px; color: var(--t1); }
+.nentry .ne-s { font-size: 12.5px; color: var(--t2); margin-top: 3px; }
+.nentry .ne-go { color: var(--emerald); flex: none; }
+.nback { display: inline-flex; align-items: center; gap: 7px; background: var(--card); border: 1px solid var(--hair); color: var(--t2); border-radius: 999px; padding: 9px 15px; font-family: inherit; font-size: 13px; cursor: pointer; margin-bottom: 14px; }

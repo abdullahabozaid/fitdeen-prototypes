@@ -15,6 +15,20 @@
 .dC .pad{padding:0 0 120px;}
 .dC .mono{font-family:"JetBrains Mono",monospace;}
 
+/* motion (Emil): shared press feedback + list entrance stagger. transform/opacity only. */
+.dC button,.dC [role="button"]{transition:transform 150ms cubic-bezier(0.23,1,0.32,1);}
+.dC button:active{transform:scale(.97);}
+@keyframes dC-rise{from{opacity:0; transform:translateY(6px);}to{opacity:1; transform:translateY(0);}}
+.dC .dC-stagger > *{opacity:0; animation:dC-rise .26s cubic-bezier(0.23,1,0.32,1) forwards;}
+.dC .dC-stagger > *:nth-child(1){animation-delay:.03s;}
+.dC .dC-stagger > *:nth-child(2){animation-delay:.07s;}
+.dC .dC-stagger > *:nth-child(3){animation-delay:.11s;}
+.dC .dC-stagger > *:nth-child(4){animation-delay:.15s;}
+.dC .dC-stagger > *:nth-child(5){animation-delay:.19s;}
+.dC .dC-stagger > *:nth-child(6){animation-delay:.23s;}
+.dC .dC-stagger > *:nth-child(7){animation-delay:.27s;}
+.dC .dC-stagger > *:nth-child(8){animation-delay:.31s;}
+
 /* full-bleed gradient cover hero */
 .dC .cover{position:relative; padding:56px 22px 30px; overflow:hidden; border-bottom-left-radius:32px; border-bottom-right-radius:32px;
   background:linear-gradient(155deg, #6ee7c7 0%, #34d399 22%, #10b981 62%, #0b7a59 100%);}
@@ -36,7 +50,8 @@
 .dC .bstat span{font-family:"JetBrains Mono"; font-size:8.5px; letter-spacing:1px; color:var(--t3); text-transform:uppercase; display:block; margin-top:5px;}
 
 /* bold prayer strip */
-.dC .prayerC{margin:18px 20px 0; background:linear-gradient(120deg, var(--raised), var(--card)); border:1px solid var(--hair); border-radius:18px; padding:16px 18px; display:flex; align-items:center; gap:12px; width:calc(100% - 40px); cursor:pointer; color:inherit; font-family:inherit; text-align:left;}
+.dC .prayerC{margin:18px 20px 0; background:var(--card); border:1px solid var(--hair); border-radius:18px; padding:16px 18px; display:flex; align-items:center; gap:12px; width:calc(100% - 40px); cursor:pointer; color:inherit; font-family:inherit; text-align:left;}
+.dC .prayerC:active{transform:scale(.98);}
 .dC .prayerC .pdots{display:flex; gap:7px;}
 .dC .prayerC .pd{width:9px;height:9px;border-radius:999px;border:1px solid var(--t4);}
 .dC .prayerC .pd.done{background:var(--emerald);border-color:var(--emerald);}
@@ -46,7 +61,7 @@
 
 /* editorial hadith pull-quote */
 .dC .hadithC{padding:32px 26px 8px; text-align:center;}
-.dC .hadithC .glyph{font-size:18px; color:rgba(52,211,153,.6);}
+.dC .hadithC .glyph{font-size:18px; color:var(--t3);}
 .dC .hadithC .ar{font-family:"Amiri"; font-size:27px; color:var(--t1); direction:rtl; line-height:1.75; margin:10px 0 6px;}
 .dC .hadithC .en{font-family:"Outfit"; font-weight:600; font-size:18px; line-height:1.35; color:var(--t1);}
 .dC .hadithC .cite{font-family:"JetBrains Mono"; font-size:10px; letter-spacing:1.5px; color:var(--t3); text-transform:uppercase; margin-top:10px;}

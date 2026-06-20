@@ -68,7 +68,7 @@ export default function Coach() {
       </div>
 
       {msgs.length <= coachSeed.length && (
-        <div className="coach-chips">
+        <div className="coach-chips dA-stagger">
           {coachPrompts.map((p) => (
             <button className="coach-chip" key={p} onClick={() => send(p)}>{p}</button>
           ))}

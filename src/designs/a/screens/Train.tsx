@@ -9,6 +9,7 @@ type SetState = Record<number, boolean[]>
 
 export default function Train({ go }: { go: (t: string) => void }) {
   const [tab, setTab] = useState<Tab>('today')
+  const [dayMode, setDayMode] = useState<'active' | 'rest'>('active')
   const [running, setRunning] = useState(true)
   const [open, setOpen] = useState<number | null>(0)
   const [sets, setSets] = useState<SetState>(() =>
@@ -39,6 +40,28 @@ export default function Train({ go }: { go: (t: string) => void }) {
         </button>
       </div>
 
+      <div className="train-day">
+        <button className={'train-dseg' + (dayMode === 'active' ? ' on' : '')} onClick={() => setDayMode('active')}>Active</button>
+        <button className={'train-dseg' + (dayMode === 'rest' ? ' on' : '')} onClick={() => setDayMode('rest')}>Rest day</button>
+      </div>
+
+      {dayMode === 'rest' ? (
+        <div className="train-rest">
+          <div className="eyebrow">Recovery</div>
+          <h2 className="train-rest-h">Rest day.</h2>
+          <p className="train-rest-lead">Muscle is built between the sessions, not only inside them. Sleep well, eat your protein, and let the work settle.</p>
+          <div className="train-rest-next">
+            <span className="train-rest-k">Next session</span>
+            <span className="train-rest-v">{todaySession.focus} · {todaySession.minutes} min</span>
+          </div>
+          <div className="train-rest-hadith">
+            <div className="glyph">۞</div>
+            <p>Your body has a right over you. Resting it is part of the trust, not a break from it.</p>
+            <div className="cite">Sahih al-Bukhari</div>
+          </div>
+        </div>
+      ) : (
+      <>
       <div className="train-segs">
         <button className={'train-seg' + (tab === 'today' ? ' on' : '')} onClick={() => setTab('today')}>TODAY</button>
         <button className={'train-seg' + (tab === 'program' ? ' on' : '')} onClick={() => setTab('program')}>PROGRAM</button>
@@ -56,7 +79,7 @@ export default function Train({ go }: { go: (t: string) => void }) {
             <div className="train-count">{doneCount} / {total} done · about {todaySession.minutes} min</div>
           </div>
 
-          <div className="train-list">
+          <div className="train-list dA-stagger">
             {todaySession.exercises.map((ex, i) => {
               const done = exDone(i)
               return (
@@ -130,6 +153,8 @@ export default function Train({ go }: { go: (t: string) => void }) {
           <h3>Five sessions this week</h3>
           <p>Past workouts and volume trends land here. Train today to add the next one.</p>
         </div>
+      )}
+      </>
       )}
     </div>
   )

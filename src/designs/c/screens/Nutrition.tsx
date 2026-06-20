@@ -1,7 +1,8 @@
 import { useState } from 'react'
 import { nutrition } from '../../../mock/data'
-import { IconPlus, IconSparkle } from '../../a/icons'
+import { IconPlus, IconSparkle, IconChevron } from '../../a/icons'
 import './nutrition.css'
+import SmartBasket from '../../../SmartBasket'
 
 type Meal = { name: string; time: string; kcal: number; p: number }
 
@@ -14,6 +15,7 @@ function quickMeal(name: string): Meal {
 export default function Nutrition({ go }: { go: (t: string) => void }) {
   const [mode, setMode] = useState<'remaining' | 'eaten'>('remaining')
   const [added, setAdded] = useState<Meal[]>([])
+  const [basket, setBasket] = useState(false)
 
   const meals: Meal[] = [...nutrition.meals, ...added]
   const kcal = meals.reduce((s, m) => s + m.kcal, 0)
@@ -27,12 +29,21 @@ export default function Nutrition({ go }: { go: (t: string) => void }) {
     { name: 'Carbs', val: nutrition.carbs, goal: nutrition.carbsGoal },
     { name: 'Fat', val: nutrition.fat, goal: nutrition.fatGoal },
   ]
-
   const log = (name: string) => setAdded((a) => [...a, quickMeal(name)])
+
+  if (basket) return (
+    <div className="pad">
+      <div className="secpad" style={{ paddingTop: 54 }}>
+        <button className="nback" onClick={() => setBasket(false)}>
+          <span style={{ transform: 'rotate(180deg)', display: 'grid' }}><IconChevron size={14} /></span> Nutrition
+        </button>
+        <SmartBasket />
+      </div>
+    </div>
+  )
 
   return (
     <div className="pad">
-      {/* full-bleed emerald cover: the remaining-calorie hero lives here, BIG */}
       <div className="cover nutc-cover">
         <div className="ctop">
           <div className="ce">Today · {meals.length} meals</div>
@@ -41,17 +52,13 @@ export default function Nutrition({ go }: { go: (t: string) => void }) {
             <button className={'mono ' + (mode === 'eaten' ? 'on' : '')} onClick={() => setMode('eaten')}>EATEN</button>
           </div>
         </div>
-
         <div className="ce clabel">Calories {mode === 'remaining' ? 'remaining' : 'eaten'}</div>
         <div className="nutc-hero mono">{heroNum.toLocaleString()}</div>
-        <div className="nutc-herometa">
-          <span className="mono">{eatenPct}%</span> of <b className="mono">{nutrition.kcalGoal.toLocaleString()}</b> kcal goal
-        </div>
+        <div className="nutc-herometa"><span className="mono">{eatenPct}%</span> of <b className="mono">{nutrition.kcalGoal.toLocaleString()}</b> kcal goal</div>
         <div className="nutc-track"><i style={{ width: eatenPct + '%' }} /></div>
       </div>
 
-      {/* single-emerald macros, big numerals */}
-      <div className="nutc-macros">
+      <div className="nutc-macros dC-stagger">
         {macros.map((m) => {
           const pct = Math.min(100, Math.round((m.val / m.goal) * 100))
           return (
@@ -65,8 +72,13 @@ export default function Nutrition({ go }: { go: (t: string) => void }) {
       </div>
 
       <div className="secpad">
+        <button className="nentry" onClick={() => setBasket(true)} style={{ marginBottom: 20 }}>
+          <div><div className="ne-t">Smart Basket</div><div className="ne-s">Build a week of halal food, under budget</div></div>
+          <span className="ne-go"><IconChevron /></span>
+        </button>
+
         <div className="nutc-sec">Today's meals</div>
-        <div className="nutc-meals">
+        <div className="nutc-meals dC-stagger">
           {meals.map((m, i) => (
             <div className="nutc-meal" key={i}>
               <span className="nutc-mtime mono">{m.time}</span>
@@ -79,19 +91,13 @@ export default function Nutrition({ go }: { go: (t: string) => void }) {
         <div className="nutc-sec">Quick log</div>
         <div className="nutc-chips">
           {nutrition.recents.map((r) => (
-            <button className="nutc-chip" key={r} onClick={() => log(r)}>
-              <IconPlus size={13} />{r}
-            </button>
+            <button className="nutc-chip" key={r} onClick={() => log(r)}><IconPlus size={13} />{r}</button>
           ))}
         </div>
 
         <div className="nutc-add">
-          <button className="nutc-addmain" onClick={() => log('Logged meal')}>
-            <IconPlus /> Add a meal
-          </button>
-          <button className="nutc-ai" onClick={() => go('coach')} aria-label="Ask AI">
-            <IconSparkle size={20} />
-          </button>
+          <button className="nutc-addmain" onClick={() => log('Logged meal')}><IconPlus /> Add a meal</button>
+          <button className="nutc-ai" onClick={() => go('coach')} aria-label="Ask AI"><IconSparkle size={20} /></button>
         </div>
       </div>
     </div>

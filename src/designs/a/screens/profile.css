@@ -51,7 +51,7 @@
 .dA .prof-list{background:var(--card); border:1px solid var(--hair); border-radius:16px; overflow:hidden;}
 .dA .prof-row{width:100%; display:flex; align-items:center; justify-content:space-between; padding:16px 16px; background:none; border:none; border-bottom:1px solid var(--hair); cursor:pointer; font-family:inherit;}
 .dA .prof-row:last-child{border-bottom:none;}
-.dA .prof-row:active{background:rgba(255,255,255,.03);}
+.dA .prof-row:active{background:rgba(255,255,255,.03); transform:scale(0.98);}
 .dA .prof-rlabel{font-size:15px; color:var(--t1);}
 .dA .prof-row.danger .prof-rlabel{color:var(--chest);}
 .dA .prof-row.active .prof-rlabel{color:var(--ebright);}

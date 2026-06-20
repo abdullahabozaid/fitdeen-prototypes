@@ -7,6 +7,7 @@ import './train.css'
 type SetState = Record<number, boolean[]>
 
 export default function Train({ go }: { go: (t: string) => void }) {
+  const [view, setView] = useState<'active' | 'rest'>('active')
   const [open, setOpen] = useState<number | null>(0)
   const [sets, setSets] = useState<SetState>(() =>
     Object.fromEntries(todaySession.exercises.map((ex, i) => [i, ex.sets.map(() => false)]))
@@ -25,8 +26,44 @@ export default function Train({ go }: { go: (t: string) => void }) {
   const toggleExercise = (ei: number) =>
     setSets((s) => ({ ...s, [ei]: s[ei].map(() => !exDone(ei)) }))
 
+  const dayToggle = (
+    <div className="trn-viewtoggle">
+      <button className={view === 'active' ? 'on' : ''} onClick={() => setView('active')}>Active</button>
+      <button className={view === 'rest' ? 'on' : ''} onClick={() => setView('rest')}>Rest day</button>
+    </div>
+  )
+
+  if (view === 'rest') {
+    return (
+      <div className="pad">
+        {dayToggle}
+        <div className="trn-rest">
+          <div className="ce trn-rest-ey">Saturday · Rest day</div>
+          <h1 className="trn-rest-h">Rest is part of<br />the work.</h1>
+          <p className="trn-rest-lead">No session today. Let the muscle you trained recover, eat well, and keep your prayers. Strength is built in the rest, not against it.</p>
+
+          <div className="trn-rest-next">
+            <div className="trn-rest-next-l mono">Next session</div>
+            <div className="trn-rest-next-t">{todaySession.title}</div>
+            <div className="trn-rest-next-m mono">Tomorrow · {todaySession.minutes} min · {todaySession.muscles.length} groups</div>
+            <div className="cmuscles trn-rest-muscles">
+              {todaySession.muscles.map((m) => <div className="m" key={m} style={{ background: muscleColors[m] }} />)}
+            </div>
+          </div>
+
+          <div className="trn-rest-hadith">
+            <div className="trn-rest-glyph">۞</div>
+            <div className="en trn-rest-ar">Your body has a right over you.</div>
+            <div className="cite trn-rest-cite">Sahih al-Bukhari</div>
+          </div>
+        </div>
+      </div>
+    )
+  }
+
   return (
     <div className="pad">
+      {dayToggle}
       <div className="cover trn-cover">
         <div className="ctop">
           <div className="ce">Push day · 6 lifts</div>
@@ -41,7 +78,7 @@ export default function Train({ go }: { go: (t: string) => void }) {
         <div className="trn-coverbar"><span style={{ width: pct + '%' }} /></div>
       </div>
 
-      <div className="trn-list">
+      <div className="trn-list dC-stagger">
         {todaySession.exercises.map((ex, i) => {
           const done = exDone(i)
           const isOpen = open === i

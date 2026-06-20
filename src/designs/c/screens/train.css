@@ -9,9 +9,10 @@
 /* exercise list */
 .dC .trn-list{padding:22px 20px 0; display:flex; flex-direction:column; gap:13px;}
 
-.dC .trn-item{position:relative; background:var(--card); border:1px solid var(--hair); border-radius:18px; padding:16px 16px 16px 22px; overflow:hidden; transition:border-color .2s;}
-.dC .trn-item.open{border-color:rgba(52,211,153,.28);}
+.dC .trn-item{position:relative; background:var(--card); border:1px solid var(--hair); border-radius:18px; padding:16px 16px 16px 22px; overflow:hidden; transition:border-color .2s, transform 150ms cubic-bezier(0.23,1,0.32,1);}
+.dC .trn-item.open{border-color:rgba(255,255,255,.16);}
 .dC .trn-item.done{background:var(--raised);}
+.dC .trn-head:active{transform:scale(.985);}
 
 /* vertical completion bar — the Train signature, muscle-tinted */
 .dC .trn-bar{position:absolute; left:0; top:0; bottom:0; width:5px; background:var(--mc); opacity:.32; transition:opacity .2s;}
@@ -41,7 +42,7 @@
 .dC .trn-srow span{font-size:15px; color:var(--t1);}
 .dC .trn-srow span:nth-child(2),.dC .trn-srow span:nth-child(3){text-align:center;}
 .dC .trn-sn{color:var(--t3) !important; font-size:13px !important;}
-.dC .trn-srow.set-done{background:rgba(52,211,153,.07);}
+.dC .trn-srow.set-done{background:rgba(255,255,255,.04);}
 .dC .trn-srow.set-done span{color:var(--t2);}
 
 .dC .trn-scheck{justify-self:end; width:30px; height:30px; border-radius:9px; display:grid; place-items:center; border:1.5px solid var(--hair); background:transparent; color:transparent; cursor:pointer; transition:all .16s;}
@@ -54,3 +55,28 @@
 .dC .trn-finish:active{transform:scale(.985);}
 .dC .trn-finish:disabled{opacity:.4; box-shadow:none; cursor:not-allowed;}
 .dC .trn-fnote{text-align:center; margin-top:12px; font-size:11px; letter-spacing:.5px; color:var(--t3);}
+
+/* Active / Rest day view toggle — subtle mono segmented control (cover owns the green) */
+.dC .trn-viewtoggle{display:flex; gap:4px; margin:16px 20px 0; padding:4px; background:var(--card); border:1px solid var(--hair); border-radius:999px;}
+.dC .trn-viewtoggle button{flex:1; border:none; background:none; cursor:pointer; padding:9px 12px; border-radius:999px;
+  font-family:"Outfit",sans-serif; font-weight:600; font-size:13px; color:var(--t3); transition:color .18s, background .18s, transform 150ms cubic-bezier(0.23,1,0.32,1);}
+.dC .trn-viewtoggle button:active{transform:scale(.97);}
+.dC .trn-viewtoggle button.on{background:var(--raised); color:var(--t1);}
+
+/* Rest day — a calm view: no list, never guilt */
+.dC .trn-rest{padding:40px 26px 0;}
+.dC .trn-rest-ey{color:var(--t3); margin-bottom:14px;}
+.dC .trn-rest-h{font-family:"Outfit",sans-serif; font-weight:800; font-size:40px; line-height:1; letter-spacing:-1.4px; color:var(--t1);}
+.dC .trn-rest-lead{font-size:15.5px; line-height:1.6; color:var(--t2); margin-top:18px; max-width:32ch;}
+
+.dC .trn-rest-next{margin-top:34px; background:var(--card); border:1px solid var(--hair); border-radius:18px; padding:18px 20px;}
+.dC .trn-rest-next-l{font-size:9.5px; letter-spacing:1.5px; text-transform:uppercase; color:var(--t3);}
+.dC .trn-rest-next-t{font-family:"Outfit",sans-serif; font-weight:700; font-size:20px; letter-spacing:-.4px; color:var(--t1); margin-top:8px;}
+.dC .trn-rest-next-m{font-size:11.5px; color:var(--t3); margin-top:6px;}
+.dC .trn-rest-muscles{margin-top:14px;}
+.dC .trn-rest-muscles .m{box-shadow:none;}
+
+.dC .trn-rest-hadith{margin-top:36px; text-align:center;}
+.dC .trn-rest-glyph{font-size:18px; color:var(--t3);}
+.dC .trn-rest-ar{font-family:"Outfit",sans-serif; font-weight:600; font-size:18px; line-height:1.4; color:var(--t1); margin-top:10px;}
+.dC .trn-rest-cite{font-family:"JetBrains Mono",monospace; font-size:10px; letter-spacing:1.5px; text-transform:uppercase; color:var(--t3); margin-top:10px;}

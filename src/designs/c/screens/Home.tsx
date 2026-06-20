@@ -13,7 +13,7 @@ export default function HomeC({ go }: { go: (t: string) => void }) {
         <button className="cbtn" onClick={() => go('train')}><IconPlay size={15} /> Start workout</button>
       </div>
 
-      <div className="bigstats">
+      <div className="bigstats dC-stagger">
         <div className="bstat"><b>{streak}</b><span>Day streak</span></div>
         <div className="bstat"><b>3/5</b><span>Prayers</span></div>
         <div className="bstat"><b>58%</b><span>Nutrition</span></div>

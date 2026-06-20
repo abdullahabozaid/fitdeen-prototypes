@@ -15,12 +15,35 @@
 .dB-scroll::-webkit-scrollbar{display:none;}
 .dB .pad{padding:54px 18px 112px;}
 .dB .mono{font-family:"JetBrains Mono",monospace;}
+
+/* ── motion: press feedback + list entrance (transform/opacity only) ───────── */
+.dB button, .dB .today, .dB .pstrip, .dB .trn-card, .dB .nutb-meal, .dB .nutb-chip,
+.dB .b-prof-row, .dB .b-prof-badge, .dB .onbB-chip, .dB .onbB-opt, .dB .onbB-day,
+.dB .bcoach-chip, .dB .trn-mchip{ transition:transform 150ms cubic-bezier(.23,1,.32,1), border-color .2s ease, background .25s ease, color .2s ease; }
+.dB button:active{ transform:scale(.97); }
+.dB .today:active, .dB .pstrip:active, .dB .b-prof-row:active, .dB .nutb-meal:active{ transform:scale(.98); }
+.dB .trn-card:active{ transform:scale(.99); }
+.dB .fab:active{ transform:scale(.94); }
+
+@keyframes dB-rise{ from{ opacity:0; transform:translateY(6px); } to{ opacity:1; transform:none; } }
+.dB .trn-list > *, .dB .nutb-meals > .nutb-meal, .dB .bcoach-chips > .bcoach-chip{
+  opacity:0; animation:dB-rise .26s cubic-bezier(.23,1,.32,1) forwards;
+}
+.dB .trn-list > *:nth-child(1){animation-delay:30ms;} .dB .trn-list > *:nth-child(2){animation-delay:60ms;}
+.dB .trn-list > *:nth-child(3){animation-delay:90ms;} .dB .trn-list > *:nth-child(4){animation-delay:120ms;}
+.dB .trn-list > *:nth-child(5){animation-delay:150ms;} .dB .trn-list > *:nth-child(6){animation-delay:180ms;}
+.dB .trn-list > *:nth-child(n+7){animation-delay:200ms;}
+.dB .nutb-meal:nth-child(1){animation-delay:30ms;} .dB .nutb-meal:nth-child(2){animation-delay:60ms;}
+.dB .nutb-meal:nth-child(3){animation-delay:90ms;} .dB .nutb-meal:nth-child(4){animation-delay:120ms;}
+.dB .nutb-meal:nth-child(n+5){animation-delay:150ms;}
+.dB .bcoach-chip:nth-child(2){animation-delay:40ms;} .dB .bcoach-chip:nth-child(3){animation-delay:80ms;}
+.dB .bcoach-chip:nth-child(4){animation-delay:120ms;}
 .dB .eyebrow{font-family:"JetBrains Mono",monospace; font-weight:500; font-size:10.5px; letter-spacing:1.7px; color:var(--t3); text-transform:uppercase;}
 
 .dB .top{display:flex; justify-content:space-between; align-items:center;}
 .dB .greet{font-family:"Outfit"; font-weight:800; font-size:23px; letter-spacing:-.5px;}
 .dB .greet small{display:block; font-family:"JetBrains Mono"; font-weight:500; font-size:10.5px; letter-spacing:1.6px; color:var(--t3); text-transform:uppercase; margin-bottom:3px;}
-.dB .hbtn{width:40px; height:40px; border-radius:13px; background:var(--card); border:1px solid var(--hair); display:grid; place-items:center; color:var(--ebright); cursor:pointer;}
+.dB .hbtn{width:40px; height:40px; border-radius:13px; background:var(--card); border:1px solid var(--hair); display:grid; place-items:center; color:var(--t2); cursor:pointer;}
 
 /* Day-Score ring hero */
 .dB .score{margin-top:18px; border-radius:24px; padding:22px 20px; position:relative; overflow:hidden;
@@ -34,11 +57,11 @@
 .dB .ssline{display:flex; justify-content:space-between; align-items:center; padding:7px 0; border-bottom:1px solid var(--hair);}
 .dB .ssline:last-child{border-bottom:none;}
 .dB .ssline .k{font-size:13px; color:var(--t2);}
-.dB .ssline .v{font-family:"JetBrains Mono"; font-weight:700; font-size:13px; color:var(--ebright);}
+.dB .ssline .v{font-family:"JetBrains Mono"; font-weight:700; font-size:13px; color:var(--t1);}
 .dB .ssline .v.off{color:var(--t3);}
 
 /* today action card (compact) */
-.dB .today{margin-top:14px; display:flex; align-items:center; gap:14px; background:var(--raised); border:1px solid var(--hair); border-top:1px solid var(--eline); border-radius:18px; padding:14px 16px; width:100%; text-align:left; cursor:pointer; color:inherit; font-family:inherit;}
+.dB .today{margin-top:14px; display:flex; align-items:center; gap:14px; background:var(--raised); border:1px solid var(--hair); border-radius:18px; padding:14px 16px; width:100%; text-align:left; cursor:pointer; color:inherit; font-family:inherit;}
 .dB .today .tinfo{flex:1;}
 .dB .today .tinfo .ttl{font-family:"Outfit"; font-weight:700; font-size:16px;}
 .dB .today .tinfo .sub{font-size:12.5px; color:var(--t2); margin-top:2px;}
@@ -54,7 +77,7 @@
 /* prayer strip (compact, gradient) */
 .dB .pstrip{display:flex; align-items:center; gap:11px; margin-top:16px; background:var(--card); border:1px solid var(--hair); border-radius:16px; padding:13px 15px; width:100%; cursor:pointer; color:inherit; font-family:inherit;}
 .dB .pstrip .pd{width:8px;height:8px;border-radius:999px;border:1px solid var(--t4);}
-.dB .pstrip .pd.done{background:var(--emerald);border-color:var(--emerald);}
+.dB .pstrip .pd.done{background:var(--t2);border-color:var(--t2);}
 .dB .pstrip .pd.next{border:2px solid var(--ebright);width:10px;height:10px;}
 .dB .pstrip .pdots{display:flex;gap:6px;}
 .dB .pstrip .pt{flex:1;text-align:left;font-size:13.5px;color:var(--t2);}

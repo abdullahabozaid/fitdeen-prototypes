@@ -73,7 +73,7 @@ export default function Onboarding({ onDone }: { onDone: () => void }) {
             <div className="cOnb-eye">Step 02 / 05</div>
             <h1 className="cOnb-h1">What are you here for?</h1>
             <p className="cOnb-lead">Pick all that apply. Change them anytime.</p>
-            <div className="cOnb-chips">
+            <div className="cOnb-chips dC-stagger">
               {goals.map((g) => {
                 const on = picked.includes(g)
                 return (
@@ -145,7 +145,7 @@ export default function Onboarding({ onDone }: { onDone: () => void }) {
             <p className="cOnb-lead">We schedule around prayer times. Set how they are calculated.</p>
 
             <div className="cOnb-label">Calculation method</div>
-            <div className="cOnb-select">
+            <div className="cOnb-select dC-stagger">
               {methods.map((m, i) => (
                 <button
                   key={m}

@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { todaySession, muscleColors } from '../../../mock/data'
+import { todaySession, muscleColors, hadith } from '../../../mock/data'
 import { IconCheck, IconChevron } from '../../a/icons'
 import './train.css'
 
@@ -10,6 +10,7 @@ const R = 46
 const C = 2 * Math.PI * R
 
 export default function Train({ go }: { go: (t: string) => void }) {
+  const [view, setView] = useState<'active' | 'rest'>('active')
   const [open, setOpen] = useState<number | null>(0)
   const [sets, setSets] = useState<SetState>(() =>
     Object.fromEntries(todaySession.exercises.map((ex, i) => [i, ex.sets.map(() => false)]))
@@ -42,6 +43,32 @@ export default function Train({ go }: { go: (t: string) => void }) {
         <button className="hbtn" onClick={() => go('home')} aria-label="back"><IconChevron size={18} /></button>
       </div>
 
+      <div className="trn-vtoggle">
+        <button className={view === 'active' ? 'on' : ''} onClick={() => setView('active')}>Active day</button>
+        <button className={view === 'rest' ? 'on' : ''} onClick={() => setView('rest')}>Rest day</button>
+      </div>
+
+      {view === 'rest' ? (
+        <div className="trn-rest">
+          <div className="trn-rest-glyph">۞</div>
+          <div className="eyebrow trn-rest-eye">Recovery</div>
+          <h2 className="trn-rest-h">Rest day.</h2>
+          <p className="trn-rest-lead">No session today. Muscle is built between the lifts. Let it. Sleep well, hydrate, walk.</p>
+
+          <div className="trn-rest-next">
+            <span className="eyebrow">Next session</span>
+            <div className="trn-rest-nrow">
+              <span className="trn-rest-ntitle">{todaySession.title}</span>
+              <span className="trn-rest-nmeta mono">{todaySession.exerciseCount} ex · {todaySession.minutes} min</span>
+            </div>
+          </div>
+
+          <div className="trn-rest-hadith">
+            <div className="en">{hadith.en}</div>
+            <div className="cite mono">{hadith.cite} · rest is honoured, never owed back</div>
+          </div>
+        </div>
+      ) : (<>
       {/* ring hero: session completion + live data tiles */}
       <div className="score trn-hero">
         <div className="score-row">
@@ -132,6 +159,7 @@ export default function Train({ go }: { go: (t: string) => void }) {
         <IconCheck size={17} /> Finish workout
       </button>
       <div className="trn-fnote">{doneCount} of {total} exercises logged · {setsDone} sets</div>
+      </>)}
     </div>
   )
 }
